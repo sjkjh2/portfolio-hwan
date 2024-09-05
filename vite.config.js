@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import imagemin from 'vite-plugin-imagemin';
+import viteImagemin from 'vite-plugin-imagemin';
 import path from 'node:path';
 
 export default defineConfig(() => {
@@ -32,7 +32,8 @@ export default defineConfig(() => {
       host: true,
     },
     plugins: [
-      imagemin({
+      viteImagemin({
+        cache: true, // 캐시를 활성화하여 빌드 시간을 줄입니다.
         gifsicle: {
           optimizationLevel: 7,
           interlaced: false,
@@ -51,11 +52,11 @@ export default defineConfig(() => {
           plugins: [
             {
               name: 'removeViewBox',
-              active: false,
+              active: false, // viewBox 속성을 제거하지 않음
             },
             {
               name: 'removeEmptyAttrs',
-              active: false,
+              active: false, // 빈 속성을 제거하지 않음
             },
           ],
         },
