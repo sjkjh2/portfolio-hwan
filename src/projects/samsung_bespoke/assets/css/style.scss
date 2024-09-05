@@ -1,0 +1,759 @@
+@import "_common";
+
+.wrap {
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-bottom: 200px
+}
+
+.bspk-top {
+  &__kv {
+    height: 860px;
+    padding-top: 623px;
+    background-repeat: no-repeat;
+    background-image: url("../images/bg_kv.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    text-align: center;
+
+    &-tit {
+      width: 581px;
+      height: 47px;
+      background-repeat: no-repeat;
+      background-image: url("../images/logo_txt_white.png");
+      background-position: center center;
+      background-size: 100% 100%;
+      margin: 0 auto;
+      opacity: 0;
+      animation: 1s fade-in 0.5s forwards ease-in;
+    }
+    &-subtit {
+      display: block;
+      margin-top: 20px;
+      color: $color-b88872;
+      font-size: 30px;
+      opacity: 0;
+      animation: 1s fade-in 1s forwards ease-in;
+    }
+  }
+
+  &__desc {
+    position: relative;
+    height: 472px;
+    background: rgb(0,0,0); 
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(85,69,46,1) 100%);
+
+    &-txt {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 100%;
+      color: $color-b88872;
+      font-size: 28px;
+      text-align: center;
+      line-height: 1.5em;
+    }
+
+    &-bar {
+      position: absolute;
+      left: 50%;
+      width: 1px;
+
+      &--top {
+        overflow: hidden;
+        top: 0;
+        transform: translate3d(-50%, -40%, 0);
+        height: 220px;
+        
+        &-inner {
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate3d(0, -100%, 0);
+          width: 100%;
+          height: 100%;
+          background-color: $color-b88872;
+          opacity:0;
+          animation: 0.8s move-down 1.3s forwards;
+        }
+      }
+
+      &--bottom {
+        bottom: 0;
+        transform: translate3d(-50%, 0, 0);
+        height: 140px;
+        background-color: $color-b88872;
+      }
+    }
+  }
+
+  &__video {
+    height: 56.25%;
+
+    &-item {
+      height: 100%;
+    }
+  }
+}
+
+.bspk-intro {
+  position: relative;
+  padding-top: 200px;
+
+  &__box {
+    width: 1392px;
+    margin: 0 auto;
+  }
+
+  &__box + &__box {
+    padding-top: 100px;
+  }
+
+  &__pic {
+    overflow: hidden;
+    position: relative;
+    height: 560px;
+
+    &-item {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      opacity: 0;
+      transition: opacity 1s;
+
+      &.-active {
+        opacity: 1;
+      }
+
+      &--design01 {
+        background-image: url("../images/intro01_01.jpg");
+      }
+      &--design02 {
+        background-image: url("../images/intro01_02.jpg");
+      }
+      &--design03 {
+        background-image: url("../images/intro01_03.jpg");
+      }
+
+      &--exper01 {
+        background-image: url("../images/intro02_01.jpg");
+      }
+      &--exper02 {
+        background-image: url("../images/intro02_02.jpg");
+      }
+      &--exper03 {
+        background-image: url("../images/intro02_03.jpg");
+      }
+
+      &--service01 {
+        background-image: url("../images/intro03_01.jpg");
+      }
+      &--service02 {
+        background-image: url("../images/intro03_02.jpg");
+      }
+      &--service03 {
+        background-image: url("../images/intro03_03.jpg");
+      }
+    }
+  }
+
+  &__txt {
+    position: relative;
+    padding: 0 0 0 240px;
+
+    &-tit {
+      position: absolute;
+      left: 240px;
+      bottom: 210px;
+      color: $color-fff;
+      font-size: 40px;
+  
+      &-item {
+        display: block;
+      }
+  
+      &--point {
+        color: $color-b88872;
+        font-weight: 700;
+      }
+    }
+
+    &-desc {
+      padding-top: 35px;
+      color: $color-545454;
+      font-size: 18px;
+      line-height: 1.7em;
+
+      &-small {
+        display: block;
+        color: $color-545454;
+        font-size: 15px;
+      }
+    }
+
+    &-bar {
+      position: absolute;
+      left: 205px;
+      bottom: 0;
+      width: 1px;
+      height: 260px;
+      background-color: $color-b88872;
+    }
+  }
+
+  &__box--pos-right {
+    text-align: right;
+
+    .bspk-intro__txt {
+      padding: 0 240px 0 0;
+
+      &-tit {
+        left: unset;
+        right: 240px;
+      }
+
+      &-bar {
+        right: 205px;
+        left: unset;
+      }
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
+  }
+}
+
+.bspk-goods {
+  width: 1392px;
+  padding-top: 200px;
+  margin: 0 auto;
+
+  &__tit {
+    width: 487px;
+    height: 41px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image: url("../images/logo_txt_black.png");
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+
+  &__box {
+    margin-top: 50px;
+
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item.swiper-slide {
+    width: 440px;
+  }
+
+  &__item {
+    padding-bottom: 10px;
+
+    &-img {
+      height: 440px;
+    }
+
+    &-tit {
+      margin-top: 30px;
+      padding: 0 16px;
+      color: $color-1d1d1f;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    &-desc {
+      margin-top: 15px;
+      padding: 0 16px;
+      color: $color-545454;
+      font-size: 16px;
+    }
+
+    &-link {
+      display: inline-block;
+      margin: 10px 0 0 16px;
+      padding: 10px 0;
+      color: $color-333;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}
+
+.bspk-banner {
+  width: 1392px;
+  margin: 120px auto 0;
+
+  &__item {
+    position: relative;
+    height: 520px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+
+    &--samsung {
+      background-image: url("../images/banner01.jpg");
+    }
+    &--dacor {
+      background-image: url("../images/banner02.jpg");
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 440px;
+      height: 100%;
+      background:rgb(29,28,25); 
+      background: linear-gradient(0deg, rgba(29,28,25,1) 0%, rgba(85,69,46,1) 100%);
+
+      &--pos-left {
+        left: 0;
+        right: unset;
+      }
+
+      &--bgcolor {
+        background: linear-gradient(0deg, rgba(58,36,25,1) 0%, rgba(128,109,103,1) 100%);
+      }
+    }
+
+    &-desc {
+      color: $color-d5c2b2;
+      font-size: 24px;
+      line-height: 1.6em;
+      text-align: center;
+    }
+
+    &-link {
+      display: inline-block;
+      margin-top: 55px;
+      padding: 5px 0;
+      color: $color-fff;
+      font-size: 16px;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 160px;
+  }
+}
+
+
+@media (max-width: 1919px) {
+  .wrap {
+    padding-bottom: 10.4167vw
+  }
+  
+  .bspk-top {
+    &__kv {
+      height: 44.7917vw;
+      padding-top: 32.4479vw;
+  
+      &-tit {
+        width: 30.2604vw;
+        height: 2.4479vw;
+      }
+      &-subtit {
+        margin-top: 1.0417vw;
+        font-size: 1.5625vw; 
+      }
+    }
+  
+    &__desc {
+      height: 24.5833vw;
+  
+      &-txt {
+        font-size: 1.4583vw;
+      }
+  
+      &-bar {
+        width: 0.0521vw;
+  
+        &--top {
+          height: 11.4583vw;
+        }
+  
+        &--bottom {
+          height: 7.2917vw;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .bspk-intro {
+    padding-top: 13.8889vw;
+  
+    &__box {
+      width: 96.6667vw;
+    }
+  
+    &__box + &__box {
+      padding-top: 6.9444vw;
+    }
+  
+    &__pic {
+      height: 38.8889vw;
+    }
+  
+    &__txt {
+      padding: 0 0 0 16.6667vw;
+  
+      &-tit {
+        left: 16.6667vw;
+        bottom: 14.5833vw;
+        font-size: 2.7778vw;
+      }
+  
+      &-desc {
+        padding-top: 2.4306vw;
+        font-size: 1.2500vw;
+  
+        &-small {
+          font-size: 1.0417vw;
+        }
+      }
+  
+      &-bar {
+        left: 14.2361vw;
+        height: 18.0556vw;
+      }
+    }
+  
+    &__box--pos-right {
+      .bspk-intro__txt {
+        padding: 0 16.6667vw 0 0;
+  
+        &-tit {
+          right: 16.6667vw;
+        }
+  
+        &-bar {
+          right: 14.2361vw;
+        }
+      }
+    }
+  }
+  
+  .bspk-goods {
+    width: 96.6667vw;
+    padding-top: 13.8889vw;
+  
+    &__tit {
+      width: 33.8194vw;
+      height: 2.8472vw;
+    }
+  
+    &__box {
+      margin-top: 3.4722vw;
+    }
+  
+    &__item.swiper-slide {
+      width: 30.5556vw;
+    }
+  
+    &__item {
+      padding-bottom: 0.6944vw;
+  
+      &-img {
+        height: 30.5556vw;
+      }
+  
+      &-tit {
+        margin-top: 2.0833vw;
+        padding: 0 1.1111vw;
+        font-size: 2.5000vw;
+      }
+  
+      &-desc {
+        margin-top: 1.0417vw;
+        padding: 0 1.1111vw;
+        font-size: 1.1111vw;
+      }
+  
+      &-link {
+        margin: 0.6944vw 0 0 1.1111vw;
+        padding: 0.6944vw 0;
+        font-size: 1.1111vw;
+      }
+    }
+  }
+  
+  .bspk-banner {
+    width: 96.6667vw;
+    margin: 8.3333vw auto 0;
+  
+    &__item {
+      height: 36.1111vw;
+  
+      &-inner {
+        width: 30.5556vw;
+      }
+  
+      &-desc {
+        font-size: 1.6667vw;
+      }
+  
+      &-link {
+        margin-top: 3.8194vw;
+        padding: 0.3472vw 0;
+        font-size: 1.1111vw;
+        text-underline-offset: 0.6944vw;
+      }
+    }
+  
+    &__item + &__item {
+      margin-top: 11.1111vw;
+    }
+  }
+}
+
+
+@media (max-width: 800px) {
+  .wrap {
+    padding-bottom: 33.3333vw
+  }
+  
+  .bspk-top {
+    &__kv {
+      height: 138.8889vw;
+      padding-top: 97.2222vw;
+      background-image: url("../images/bg_kv_m.jpg");
+  
+      &-tit {
+        width: 52.5vw;
+        height: 18.3333vw;
+        background-image: url("../images/logo_txt_white_m.png");
+      }
+      &-subtit {
+        margin-top: 5.5556vw;
+        font-size: 4.4444vw; 
+      }
+    }
+  
+    &__desc {
+      position: relative;
+      height: 100.0000vw;
+  
+      &-txt {
+        font-size: 3.8888vw;
+      }
+  
+      &-bar {
+        &--top {
+          transform: translate3d(-50%, -20%, 0);
+          height: 40vw;
+        }
+  
+        &--bottom {
+          transform: translate3d(-50%, -100%, 0);
+          height: 33.2500vw;
+        }
+      }
+    }
+  }
+  
+  .bspk-intro {
+    position: relative;
+    padding: 33.3333vw 3.3333vw 0;
+  
+    &__box {
+      width: 100%;
+    }
+  
+    &__box + &__box {
+      padding-top: 27.7778vw;
+    }
+  
+    &__pic {
+      height: 111.1111vw;
+  
+      &-item {
+        &--design01 {
+          background-image: url("../images/intro01_01_m.jpg");
+        }
+        &--design02 {
+          background-image: url("../images/intro01_02_m.jpg");
+        }
+        &--design03 {
+          background-image: url("../images/intro01_03_m.jpg");
+        }
+  
+        &--exper01 {
+          background-image: url("../images/intro02_01_m.jpg");
+        }
+        &--exper02 {
+          background-image: url("../images/intro02_02_m.jpg");
+        }
+        &--exper03 {
+          background-image: url("../images/intro02_03_m.jpg");
+        }
+  
+        &--service01 {
+          background-image: url("../images/intro03_01_m.jpg");
+        }
+        &--service02 {
+          background-image: url("../images/intro03_02_m.jpg");
+        }
+        &--service03 {
+          background-image: url("../images/intro03_03_m.jpg");
+        }
+      }
+    }
+  
+    &__txt {
+      position: relative;
+      padding: 0 0 0 8.3333vw;
+  
+      &-tit {
+        left: 8.3333vw;
+        bottom: 37.5000vw;
+        color: $color-fff;
+        font-size: 7.2222vw;
+      }
+  
+      &-desc {
+        padding-top: 6.9444vw;
+        font-size: 3.6111vw;
+  
+        &-small {
+          font-size: 3.0000vw;
+        }
+      }
+  
+      &-bar {
+        left: 4.3750vw;
+        height: 47.5000vw;
+      }
+    }
+
+    &__box--pos-right {
+      .bspk-intro__txt {
+        padding: 0 8.3333vw 0 0;
+  
+        &-tit {
+          right: 8.3333vw;
+        }
+  
+        &-bar {
+          right: 4.3750vw;
+        }
+      }
+    }
+  }
+  
+  .bspk-goods {
+    width: 100%;
+    padding-top: 33.3333vw;
+    margin: 0 auto;
+  
+    &__tit {
+      width: 81.1111vw;
+      height: 6.6666vw;
+    }
+  
+    &__box {
+      margin-top: 8.3333vw;
+    }
+  
+    &__item.swiper-slide {
+      width: 77.7778vw;
+    }
+  
+    &__item {
+      padding: 0 3.3333vw 1.2500vw;
+  
+      &-img {
+        height: 77.7778vw;
+      }
+  
+      &-tit {
+        margin-top: 5.5556vw;
+        padding: 0 3.3333vw;
+        font-size: 5.5556vw;
+      }
+  
+      &-desc {
+        margin-top: 2.7778vw;
+        padding: 0 0 0 3.3333vw;
+        font-size: 3.4000vw;
+      }
+  
+      &-link {
+        margin: 2.7778vw 0 0 3.3333vw;
+        padding: 2.7778vw 0;
+        font-size: 3.8889vw;
+      }
+    }
+  }
+  
+  .bspk-banner {
+    width: 100%;
+    margin: 33.3333vw auto 0;
+    padding: 0 3.3333vw;
+  
+    &__item {
+      height: 143.4444vw;
+      background-position: left top;
+      background-size: 100% auto;
+  
+      &--samsung {
+        background-image: url("../images/banner01_m.jpg");
+      }
+      &--dacor {
+        background-image: url("../images/banner02_m.jpg");
+      }
+  
+      &-inner {
+        top: unset;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 56.9444vw;
+      }
+  
+      &-desc {
+        font-size: 4.4444vw;
+      }
+  
+      &-link {
+        margin-top: 6.9444vw;
+        padding: 1.3889vw 0;
+        font-size: 3.8889vw;
+        text-underline-offset: 1.2500vw;
+      }
+    }
+  
+    &__item + &__item {
+      margin-top: 27.7778vw;
+    }
+  }
+}
+

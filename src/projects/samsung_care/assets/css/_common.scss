@@ -1,0 +1,59 @@
+@import "/assets/css/_reset";
+@import "/assets/css/_common";
+@import "_variable";
+@import "_mixin";
+@import "_keyframes";
+
+@font-face{
+  font-family: SamsungOneKorean;
+  src: url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.eot);
+  src: url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.eot?#iefix) format("embedded-opentype"),
+      url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.woff2) format("woff2"),
+      url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.woff) format("woff"),
+      url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-400.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family: SamsungOneKorean;
+  src: url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-700.eot);
+  src: url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-700.eot?#iefix) format("embedded-opentype"),
+      url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-700.woff2) format("woff2"),
+      url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-700.woff) format("woff"),
+      url(https://cdn.samsung.com/etc/designs/smg/sec/font/SamsungOneKorean-700.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face{
+  font-family:'Samsung Sharp Sans';
+  src: url(https://cdn.samsung.com/etc/designs/smg/global/fonts/SamsungSharpSansBd.eot);
+  src: url(https://cdn.samsung.com/etc/designs/smg/global/fonts/SamsungSharpSansBd.eot?#iefix) format("embedded-opentype"),
+      url(https://cdn.samsung.com/etc/designs/smg/global/fonts/SamsungSharpSansBd.woff2) format("woff2"),
+      url(https://cdn.samsung.com/etc/designs/smg/global/fonts/SamsungSharpSansBd.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+html, body, body * {
+  font-family: 'SamsungOneKorean', Dotum, '돋움', sans-serif;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.br-pc {
+  display: block;
+}
+
+.br-mo {
+  display: none;
+}
+
+@media (max-width: 800px){
+  .br-pc {
+    display: none;
+  }
+
+  .br-mo {
+    display: block;
+  }
+}

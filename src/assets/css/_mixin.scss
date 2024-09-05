@@ -1,0 +1,84 @@
+@mixin menuOpenBar($translate, $aniName, $aniDelay) {
+  transform:$translate;
+  animation-delay:$aniDelay;
+  animation-duration:0.6s;
+  animation-name:$aniName;
+  animation-fill-mode:forwards;
+
+  @if($aniName == 'top') {
+    @keyframes top {
+      100% {
+        transform:translate3d(200%, -600%, 0);
+      }
+    }
+  }
+  
+  @if($aniName == 'middle') {
+    @keyframes middle {
+      100% {
+        transform:translate3d(200%, 0, 0);
+      }
+    }
+  }
+
+  @if($aniName == 'bottom') {
+    @keyframes bottom {
+      100% {
+        transform:translate3d(200%, 600%, 0);
+      }
+    }
+  }
+}
+
+@mixin menuCloseBar($aniDelay, $aniName) {
+  animation-delay:$aniDelay;
+  animation-duration:0.5s;
+  animation-name:$aniName;
+  animation-fill-mode:forwards;
+
+  @if($aniName == 'row') {
+    @keyframes row {
+      100% {
+        transform: translate3d(300%, 0, 0);
+      }
+    }
+  }
+
+  @if($aniName == 'col') {
+    @keyframes col {
+      100% {
+        transform: translate3d(0, -300%, 0);
+      }
+    }
+  }
+}
+
+@mixin mixTransition($properties...) {
+  $transitions: '';
+
+  @each $property in $properties {
+    $property-name: map-get($property, 'property');
+    $duration: map-get($property, 'duration');
+    $timing: map-get($property, 'timing');
+    $delay: map-get($property, 'delay');
+
+    // 첫 번째 속성이 아닌 경우에만 쉼표를 추가
+    @if $transitions != '' {
+      $transitions: #{$transitions}, #{$property-name} #{$duration} #{$timing} #{$delay};
+    } @else {
+      $transitions: #{$property-name} #{$duration} #{$timing} #{$delay};
+    }
+  }
+
+  transition: $transitions;
+  @content;
+}
+
+@mixin background($repeat: no-repeat, $image: null, $position: left top, $size: 100% auto, $color: null) {
+  background-repeat: $repeat;
+  background-image: $image;
+  background-position: $position;
+  background-size: $size;
+  background-color: $color;
+  @content;
+}

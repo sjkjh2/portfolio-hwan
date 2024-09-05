@@ -1,0 +1,20 @@
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(4);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes visualInfiniteLoop {
+  0% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  100% {
+    transform: translate3d(100%, -50%, 0);
+  }
+}

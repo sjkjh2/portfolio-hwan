@@ -1,0 +1,20 @@
+@import "_reset";
+@import "_fonts";
+@import "_variable";
+@import "_mixin";
+@import "_keyframes";
+
+body.-has-popup {
+  overflow-y: hidden;
+}
+
+.offscreen {
+  overflow: hidden;
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  margin: -1px; 
+  -webkit-clip-path:polygon(0 0, 0 0, 0 0); 
+  clip-path:polygon(0 0, 0 0, 0 0);
+}
+

@@ -1,0 +1,6 @@
+@mixin mixTransition($duration, $timing, $properties, $delay) {
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-property: join($properties, ', ');
+  transition-delay: $delay;
+}

@@ -1,0 +1,57 @@
+@mixin mixTransition($properties...) {
+  $transitions: '';
+
+  @each $property in $properties {
+    $property-name: map-get($property, 'property');
+    $duration: map-get($property, 'duration');
+    $timing: map-get($property, 'timing');
+    $delay: map-get($property, 'delay');
+
+    // 첫 번째 속성이 아닌 경우에만 쉼표를 추가
+    @if $transitions != '' {
+      $transitions: #{$transitions}, #{$property-name} #{$duration} #{$timing} #{$delay};
+    } @else {
+      $transitions: #{$property-name} #{$duration} #{$timing} #{$delay};
+    }
+  }
+
+  transition: $transitions;
+  @content;
+}
+
+@mixin headingTitle($size, $lineHeight: 1.25, $textAlign: center) {
+  font-weight: 700;
+  font-size: $size;
+  line-height: $lineHeight;
+  text-align: $textAlign;
+  @content;
+}
+
+@mixin background($repeat: no-repeat, $image: null, $position: left top, $size: 100% auto, $color: null) {
+  background-repeat: $repeat;
+  background-image: $image;
+  background-position: $position;
+  background-size: $size;
+  background-color: $color;
+  @content;
+}
+
+@mixin tip($size) {
+  font-size: $size;
+  line-height: 1.4;
+  @content;
+}
+
+@mixin flex($display: flex, $direction: row, $align: center, $justify: center) {
+  display: $display;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  @content;
+}
+
+@mixin careLayout($maxWidth) {
+  max-width: $maxWidth;
+  margin:0 auto;
+  @content;
+}
