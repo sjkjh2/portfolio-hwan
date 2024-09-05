@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import viteImagemin from 'vite-plugin-imagemin';
+import handlebars from 'vite-plugin-handlebars';
 import path from 'node:path';
 
 export default defineConfig(() => {
@@ -60,6 +61,9 @@ export default defineConfig(() => {
             },
           ],
         },
+      }),
+      handlebars({
+        partialDirectory: path.resolve(__dirname, './src/partials'),
       }),
     ],
   }
