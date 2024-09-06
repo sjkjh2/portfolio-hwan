@@ -1,55 +1,33 @@
-@mixin menuOpenBar($translate, $aniName, $aniDelay) {
-  transform:$translate;
-  animation-delay:$aniDelay;
-  animation-duration:0.6s;
-  animation-name:$aniName;
-  animation-fill-mode:forwards;
+@mixin menuOpenBar($translate, $value, $aniDelay) {
+  transform: $translate;
+  animation-delay: $aniDelay;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
 
-  @if($aniName == 'top') {
-    @keyframes top {
-      100% {
-        transform:translate3d(200%, -600%, 0);
-      }
-    }
+  @if ($value == 'top') {
+    animation-name: menuOpenBarTop;
   }
   
-  @if($aniName == 'middle') {
-    @keyframes middle {
-      100% {
-        transform:translate3d(200%, 0, 0);
-      }
-    }
+  @if ($value == 'middle') {
+    animation-name: menuOpenBarMiddle;
   }
 
-  @if($aniName == 'bottom') {
-    @keyframes bottom {
-      100% {
-        transform:translate3d(200%, 600%, 0);
-      }
-    }
+  @if ($value == 'bottom') {
+    animation-name: menuOpenBarBottom;
   }
 }
 
-@mixin menuCloseBar($aniDelay, $aniName) {
-  animation-delay:$aniDelay;
-  animation-duration:0.5s;
-  animation-name:$aniName;
-  animation-fill-mode:forwards;
+@mixin menuCloseBar($aniDelay, $value) {
+  animation-delay: $aniDelay;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 
-  @if($aniName == 'row') {
-    @keyframes row {
-      100% {
-        transform: translate3d(300%, 0, 0);
-      }
-    }
+  @if ($value == 'row') {
+    animation-name: menuCloseBarRow;
   }
 
-  @if($aniName == 'col') {
-    @keyframes col {
-      100% {
-        transform: translate3d(0, -300%, 0);
-      }
-    }
+  @if ($value == 'col') {
+    animation-name: menuCloseBarCol;
   }
 }
 
@@ -212,13 +190,70 @@
 @mixin btnUnderlineBarHover() {
   &::before {
     animation-name: btnUnderlineBefore;
-    animation-duration: 0.4s;
+    animation-duration: 0.6s;
     animation-fill-mode: forwards;
   }
   &::after {
     animation-name: btnUnderlineAfter;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
-    animation-delay: 0.2s;
+    animation-delay: 0.3s;
+  }
+}
+
+@mixin autoSlider($width: 18rem, $height: 18rem, $paddingCol: 5rem, $quantity: null, $duration: 20s, $reverse: false) {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: calc($height + ($paddingCol * 2));
+  padding: $paddingCol 0;
+
+  &:hover .stack__item {
+    animation-play-state: paused;
+    filter: grayscale(1);
+  }
+  
+  .stack__item {
+    filter: grayscale(0);
+    transition: filter 0.6s;
+
+    @include autoSliderItem($width, $height, $quantity, $duration, $reverse);
+
+    img {
+      transform: perspective(20rem) rotateY(0);
+      transition-property: filter, transform;
+      transition-duration: 0.3s, 0.5s;
+    }
+
+    &:hover {
+      filter: grayscale(0);
+      img {
+        transform: perspective(50rem) rotateY(360deg);
+      }
+    }
+  }
+}
+
+@mixin autoSliderItem($width, $height, $quantity, $duration, $reverse) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  @if $reverse == true {
+    left: -100%;
+    animation-name: reverseAutoRun;
+  } @else {
+    left: 100%;
+    animation-name: autoRun;
+  }
+
+  @for $i from 1 through $quantity {
+    &:nth-child(#{$i}) {
+      animation-delay: calc( ($duration / $quantity) * ($i - 1) - $duration) !important;
+    }
   }
 }

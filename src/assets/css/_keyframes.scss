@@ -1,4 +1,34 @@
-@keyframes bounce {
+@keyframes menuOpenBarTop {
+  100% {
+    transform: translate3d(200%, -600%, 0);
+  }
+}
+
+@keyframes menuOpenBarMiddle {
+  100% {
+    transform:translate3d(200%, 0, 0);
+  }
+}
+
+@keyframes menuOpenBarBottom {
+  100% {
+    transform:translate3d(200%, 600%, 0);
+  }
+}
+
+@keyframes menuCloseBarRow {
+  100% {
+    transform: translate3d(300%, 0, 0);
+  }
+}
+
+@keyframes menuCloseBarCol {
+  100% {
+    transform: translate3d(0, -300%, 0);
+  }
+}
+
+@keyframes mouseBounce {
   0% {
     transform: translate(-50%, -50%) scale(3);
   }
@@ -28,5 +58,23 @@
 @keyframes btnUnderlineAfter {
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes autoRun {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes reverseAutoRun {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
   }
 }
