@@ -524,10 +524,12 @@ path {
       position: relative;
       width: 100%;
       height: 100%;
-      &:hover .work__link__bg {
+      &:hover .work__link__bg,
+      &:focus .work__link__bg {
         transform: scale(1);
       }
-      &:hover .work__link-txt {
+      &:hover .work__link-txt,
+      &:focus .work__link-txt {
         color: $colorfff;
         &__flag {
           opacity: 1;
@@ -542,6 +544,10 @@ path {
             }
           }
         }
+      }
+      &:focus .work__link__mask {
+        transform-origin: right top; 
+        transform: perspective(10rem) translate3d(0, 100%, 0) rotate(-10deg) scale(1.2);
       }
       &__tilt {
         position: absolute;
@@ -735,7 +741,7 @@ path {
       justify-content: space-between;
       margin-top: 5rem;
       padding-top: 5rem;
-      border-top: 1px solid $color333;
+      border-top: 1px solid $colora3a3a3;
       &__txt {
         display: inline-block;
         font-weight: 600;
@@ -752,6 +758,9 @@ path {
         & + .btn-round {
           margin-left: 3rem;
         }
+      }
+      .btn-underline {
+        @include btnUnderline;
       }
     }
   }

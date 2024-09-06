@@ -99,46 +99,49 @@
   position: relative;
   padding: 0 $paddingSide;
   height: $height;
-  background-color: $bgColor;
   border-radius: 4rem;
   transition: padding 0.3s $function;
   
   @content;
 
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 4rem;
-    border: 1px solid $bdColor;
-    transition-property: width, height;
-    transition-duration: 0.3s;
-    transition-timing-function: $function;
-  }
+  &::before, 
   &::after {
     content: "";
     display: inline-block;
     position: absolute;
     top: 50%;
+    transition-timing-function: $function;
+  }
+
+  &::before {
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+    border: 1px solid $bdColor;
+    transition-property: width, height, background-color;
+    transition-duration: 0.3s;
+    transition-delay: 0s, 0s, 0.1s;
+    
+  }
+  &::after {
     right: $arrRight;
-    transform: translate3d(-200%, -50%, 0) rotate(45deg);
+    transform: translate3d(-100%, -50%, 0) rotate(45deg);
     width: $arrSize;
     height: $arrSize;
-    border-top: 2px solid $bdColor;
-    border-right: 2px solid $bdColor;
+    border-top: 2px solid $colorfff;
+    border-right: 2px solid $colorfff;
     opacity: 0;
     transition-property: transform, opacity;
     transition-duration: 0.2s;
     transition-delay: 0.2s;
-    transition-timing-function: $function;
   }
-  &:hover {
+  &:hover, &:focus {
     @include btnRoundHover($paddingSide, $height);
+  }
+  &:focus {
+    outline: 0;
   }
 }
 
@@ -147,9 +150,75 @@
   &::before {
     width: calc(#{$height} * 0.7);
     height: calc(#{$height} * 0.7);;
+    background-color: $color000;
   }
   &::after {
     transform: translate3d(0, -50%, 0) rotate(45deg);
     opacity: 1;
+  }
+}
+
+@mixin btnUnderline($pdbottom: 0.5rem) {
+  position: relative;
+  padding-bottom: $pdbottom;
+  
+  @content;
+
+  &__bar {
+    @include btnUnderlineBar;
+  }
+
+  &:hover, 
+  &:focus {
+    .btn-underline__bar {
+      @include btnUnderlineBarHover();
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+}
+
+@mixin btnUnderlineBar($bgColor: $color000) {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bgColor;
+  }
+
+  &::before {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &::after {
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+
+@mixin btnUnderlineBarHover() {
+  &::before {
+    animation-name: btnUnderlineBefore;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+  }
+  &::after {
+    animation-name: btnUnderlineAfter;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
   }
 }
