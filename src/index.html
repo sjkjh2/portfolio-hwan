@@ -125,7 +125,7 @@
         <h2 class="about__tit">About me</h2>
         <h3 class="about__tit02">Kim Jae Hwan</h3>
         <p class="about__copy">
-          집중력과 결단력을 바탕으로
+          집중력과 결단력을 바탕으로 <br>
           최선을 다해 기대에 부응합니다.
         </p>
         <p class="about__desc">
@@ -134,36 +134,21 @@
           적응하며 앞으로 나아갈 수 있도록 합니다.
         </p>
         <div class="about__bottom">
-          <a href="tel:010-8694-0221">TEL: 010-8694-0221</a>
-          <input id="textCopy" type="text" value="sjkjh2@nate.com">
-          <button class="copy-text" type="button" data-element-id="textCopy">MAIL: sjkjh2@nate.com</button>
-          <input id="textCopy2" type="text" value="sfdsjkjh2@nate.com">
-          <button class="copy-text" type="button" data-element-id="textCopy2">MAIL: sjkjh2@nate.com</button>
-          <a href="">잡코리아 이력서 <span class="offscreen">페이지 이동</span></a>
-          <a href="">사람인 이력서 <span class="offscreen">페이지 이동</span></a>
+          <div class="about__bottom-deployment">
+            <a href="tel:010-8694-0221" class="about__bottom__txt btn-underline">TEL: 010-8694-0221</a>
+            <button class="about__bottom__txt btn-underline -copy-text" type="button" data-element-id="textCopy">MAIL: sjkjh2@nate.com</button>
+            <input id="textCopy" class="offscreen" type="text" value="sjkjh2@nate.com" tabindex="-1">
+          </div>
+          <div class="about__bottom-deployment">
+            <a href="" class="about__bottom__txt btn-round">잡코리아 이력서 <span class="offscreen">페이지 이동</span></a>
+            <a href="" class="about__bottom__txt btn-round">사람인 이력서 <span class="offscreen">페이지 이동</span></a>
+          </div>
         </div>
       </section>
-      <script>
-        function copyText(elemId) {
-  const textElement = document.getElementById(elemId);
-    textElement.select();
-    textElement.setSelectionRange(0, 99999); // 모바일 기기에서 텍스트 선택 범위를 설정
-
-    try {
-      const successful = document.execCommand('copy');
-      const msg = successful ? '텍스트가 클립보드에 복사되었습니다!' : '복사에 실패했습니다';
-      alert(msg);
-    } catch (err) {
-      alert('복사하는 동안 오류가 발생했습니다: ' + err);
-    }
-}
-      </script>
-      
     </main>
 
-    <footer class="footer">
-      <span class="footer__copy">ⓒ 2024, Kim Jae Hwan. All Rights Reserved</span>
-    </footer>
+    {{> footer }}
+    <!-- footer.html -->
   </div>
   
   <script type="module" src="./assets/js/index.js"></script>

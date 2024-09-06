@@ -7,7 +7,7 @@ export function removeClass(elem, className) {
 }
 
 export function setupCopyText() {
-  const copyButtons = document.querySelectorAll('.copy-text');
+  const copyButtons = document.querySelectorAll('.-copy-text');
 
   copyButtons.forEach(button => {
     button.addEventListener('click', function() {

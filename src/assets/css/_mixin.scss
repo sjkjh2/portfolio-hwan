@@ -82,3 +82,74 @@
   background-color: $color;
   @content;
 }
+
+@mixin btnRound(
+    $display: inline-flex, 
+    $paddingSide: 3.5rem, 
+    $height: 6rem, 
+    $bdColor: $color000, 
+    $bgColor: $colorfff, 
+    $arrSize: 1rem,
+    $arrRight: 1.7rem,
+    $function: cubic-bezier(.17,.17,.16,1)
+  ) {
+  display: $display;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 $paddingSide;
+  height: $height;
+  background-color: $bgColor;
+  border-radius: 4rem;
+  transition: padding 0.3s $function;
+  
+  @content;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 4rem;
+    border: 1px solid $bdColor;
+    transition-property: width, height;
+    transition-duration: 0.3s;
+    transition-timing-function: $function;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: $arrRight;
+    transform: translate3d(-200%, -50%, 0) rotate(45deg);
+    width: $arrSize;
+    height: $arrSize;
+    border-top: 2px solid $bdColor;
+    border-right: 2px solid $bdColor;
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+    transition-timing-function: $function;
+  }
+  &:hover {
+    @include btnRoundHover($paddingSide, $height);
+  }
+}
+
+@mixin btnRoundHover($paddingSide, $height) {
+  padding: 0 calc(#{$paddingSide} * 1.5) 0 0;
+  &::before {
+    width: calc(#{$height} * 0.7);
+    height: calc(#{$height} * 0.7);;
+  }
+  &::after {
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+    opacity: 1;
+  }
+}
