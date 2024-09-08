@@ -3,6 +3,7 @@
   animation-delay: $aniDelay;
   animation-duration: 0.6s;
   animation-fill-mode: forwards;
+  animation-timing-function: $transBounce;
 
   @if ($value == 'top') {
     animation-name: menuOpenBarTop;
@@ -21,6 +22,7 @@
   animation-delay: $aniDelay;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-timing-function: $transBounce;
 
   @if ($value == 'row') {
     animation-name: menuCloseBarRow;
@@ -69,7 +71,7 @@
     $bgColor: $colorfff, 
     $arrSize: 1rem,
     $arrRight: 1.7rem,
-    $function: cubic-bezier(.17,.17,.16,1)
+    $function: $transBounce
   ) {
   display: $display;
   align-items: center;
@@ -190,48 +192,81 @@
 @mixin btnUnderlineBarHover() {
   &::before {
     animation-name: btnUnderlineBefore;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
+    animation-timing-function: linear;
   }
   &::after {
     animation-name: btnUnderlineAfter;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: $transBounce;
     animation-delay: 0.3s;
   }
 }
 
-@mixin autoSlider($width: 18rem, $height: 18rem, $paddingCol: 5rem, $quantity: null, $duration: 20s, $reverse: false) {
+@mixin autoSlider($width: 16rem, $height: 16rem, $paddingCol: 5rem, $quantity: null, $duration: 20s, $reverse: false) {
   overflow: hidden;
   display: flex;
   position: relative;
   width: 100%;
-  height: calc($height + ($paddingCol * 2));
-  padding: $paddingCol 0;
+  height: calc($height + ($paddingCol * 3));
+  padding: $paddingCol 0 calc($paddingCol * 2);
 
   &:hover .stack__item {
     animation-play-state: paused;
     filter: grayscale(1);
+
+    &-flag {
+      color: $colora3a3a3;
+    }
   }
   
   .stack__item {
     filter: grayscale(0);
-    transition: filter 0.6s;
+    transition-property: filter;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
 
     @include autoSliderItem($width, $height, $quantity, $duration, $reverse);
 
-    img {
-      transform: perspective(20rem) rotateY(0);
+    &-logo {
+      position: relative;
+      transform: perspective(20rem) rotateY(0) scale(0.8);
+      z-index: 1;
       transition-property: filter, transform;
       transition-duration: 0.3s, 0.5s;
+      transition-timing-function: $transBounce;
+      backface-visibility: hidden;
+    }
+
+    &-flag {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate3d(-50%, 120%, 0) scale(1);
+      background-color: $colorfff;
+      color: $color333;
+      font-weight: 600;
+      font-size: 2rem;
+      border-radius: 2rem;
+      transition-property: transform, color;
+      transition-duration: 0.3s;
+      transition-timing-function: $transBounce;
+      white-space: nowrap;
+      
     }
 
     &:hover {
       filter: grayscale(0);
-      img {
-        transform: perspective(50rem) rotateY(360deg);
+
+      .stack__item-logo {
+        transform: perspective(50rem) rotateY(360deg) scale(1);
+      }
+
+      .stack__item-flag {
+        color: $color333;
+        transform: translate3d(-50%, 140%, 0) scale(1.3);
       }
     }
   }
