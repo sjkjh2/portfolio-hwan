@@ -2,13 +2,13 @@ import { addClass } from './module/utill';
 import { removeClass } from './module/utill';
 import { setupCopyText } from './module/utill';
 import { menuHandler } from './module/Header';
+import { projectsHandler } from './projects';
 
 menuHandler();
 setupCopyText();
 
 mainScrollHandler();
 visualHandler();  
-workHandler();
 
 
 function mainScrollHandler() {
@@ -91,31 +91,4 @@ function visualHandler() {
   window.addEventListener('resize', onResize);
 
   update(0);
-}
-
-
-function workHandler() {
-  const workWrap = document.querySelector('.work');
-
-  function linkHover(event, action) {
-    let target = event.target.closest('.work__link__tilt');
-
-    if (!target) return;
-
-    if (target.classList.contains('work__link__tilt')) {
-      if (action ==='mouseover') {
-        addClass(target, '-active');
-      } else if (action === 'mouseout') {
-        removeClass(target, '-active');
-      }
-    }
-  }
-
-  workWrap.addEventListener('mouseover', (event) => {
-    linkHover(event, 'mouseover');
-  });
-
-  workWrap.addEventListener('mouseout', (event) => {
-    linkHover(event, 'mouseout');
-  });
 }
