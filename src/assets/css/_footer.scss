@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9rem;
+  margin-left: 9rem;
+  border-top: 1px solid $colore0e0e0;
+  &__copy {
+    color: $color333;
+    font-size: 1.8rem;
+  }
+}
