@@ -1,0 +1,63 @@
+.scroll-up {
+  position: fixed;
+  right: 5rem;
+  bottom: 13rem;
+  z-index: 200;
+  width: 8rem;
+  height: 8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  &__btn {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    height: 100%;
+    background-color: $color000;
+    border: 1px solid $color000;
+    border-radius: 50%;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -30%, 0) rotate(-45deg);
+      width: 20%;
+      height: 20%;
+      border-top: 2px solid $colorfff;
+      border-right: 2px solid $colorfff;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, 60%, 0) scale(0);
+      width: 100%;
+      height: 100%;
+      background-color: $colorfff;
+      border-radius: 50%;
+      transition: transform 0.5s $transBounce;
+    }
+  }
+
+  &:hover {
+    .scroll-up__btn {
+      animation: scrollTopBtn 0.5s $transBounce;
+      &::after {
+        border-color: $color000;
+      }
+      &::before {
+        transform: translate3d(-50%, -50%, 0) scale(1);
+      }
+    }
+  }
+
+  &.-show {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -28,3 +28,9 @@ export function setupCopyText() {
     });
   });
 }
+
+export function scrollTopMove() {
+  window.addEventListener('load', () => {
+    setTimeout(() => scrollTo(0, 0), 100);
+  })
+}

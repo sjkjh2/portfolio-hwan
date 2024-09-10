@@ -1,30 +1,40 @@
 import { addClass } from './module/utill';
 import { removeClass } from './module/utill';
 import { setupCopyText } from './module/utill';
+import { scrollTopMove } from './module/utill';
+import { scrollTopMoveBtn } from './module/scrollTopMoveBtn';
 import { menuHandler } from './module/Header';
 import { projectsHandler } from './projects';
 
 menuHandler();
 setupCopyText();
+scrollTopMove();
 
 mainScrollHandler();
-visualHandler();  
+visualHandler();
+projectsHandler();
 
 
 function mainScrollHandler() {
   const headerBarElem = document.querySelector('.header-scroll');
   const menuOpenBtn = document.querySelector('.header-menu__open')
   const visual = document.querySelector('.visual');
+  let documentHeight;
   let visualBreakpoint;
+  let windowInnerHeight;
   let maxScrollValue;
 
   function onResize() {
-    maxScrollValue = document.body.offsetHeight - window.innerHeight;
+    windowInnerHeight = window.innerHeight;
+    documentHeight = document.body.offsetHeight;
+    maxScrollValue = documentHeight - windowInnerHeight;
     visualBreakpoint = visual.offsetHeight;
   }
 
   function headerProgress() {
     const scrollPer = scrollY / maxScrollValue;
+    const currentScroll = scrollY + window.innerHeight;
+
     headerBarElem.style.height = scrollPer * 100 + '%';
 
     if (scrollY >= visualBreakpoint / 1.5) {
@@ -37,6 +47,12 @@ function mainScrollHandler() {
       addClass(menuOpenBtn, '-change');
     } else {
       removeClass(menuOpenBtn, '-change');
+    }
+
+    if (currentScroll * 1.1 >= documentHeight) {
+      scrollTopMoveBtn();
+    } else {
+      
     }
   }
 
@@ -92,3 +108,4 @@ function visualHandler() {
 
   update(0);
 }
+

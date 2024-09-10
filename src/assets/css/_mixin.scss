@@ -117,11 +117,8 @@
     transition-duration: 0.2s;
     transition-delay: 0.2s;
   }
-  &:hover, &:focus {
+  &:hover {
     @include btnRoundHover($paddingSide, $height);
-  }
-  &:focus {
-    outline: 0;
   }
 }
 
@@ -148,17 +145,11 @@
     @include btnUnderlineBar;
   }
 
-  &:hover, 
-  &:focus {
+  &:hover {
     .btn-underline__bar {
       @include btnUnderlineBarHover();
     }
   }
-
-  &:focus {
-    outline: 0;
-  }
-
 }
 
 @mixin btnUnderlineBar($bgColor: $color000) {

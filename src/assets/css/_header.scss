@@ -72,8 +72,7 @@
         transform: translate3d(0, 400%, 0);
       }
     }
-    &:hover,
-    &:focus {
+    &:hover {
       .top {
         @include menuOpenBar(translate3d(0, -600%, 0), top, 0.2s);
       }
@@ -83,9 +82,6 @@
       .bottom {
         @include menuOpenBar(translate3d(0, 600%, 0), bottom, 0.4s);
       }
-    }
-    &:focus {
-      outline: 0;
     }
   }
 

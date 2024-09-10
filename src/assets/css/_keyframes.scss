@@ -78,3 +78,15 @@
     left: 100%;
   }
 }
+
+@keyframes scrollTopBtn {
+  0% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  30% {
+    transform: translate3d(-50%, -30%, 0);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
