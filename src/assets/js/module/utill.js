@@ -29,7 +29,7 @@ export function setupCopyText() {
   });
 }
 
-export function scrollTopMove() {
+export function refresh() {
   window.addEventListener('load', () => {
     setTimeout(() => scrollTo(0, 0), 100);
   })

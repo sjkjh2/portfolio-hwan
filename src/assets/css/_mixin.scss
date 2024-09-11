@@ -216,7 +216,7 @@
   .stack__item {
     filter: grayscale(0);
     transition-property: filter;
-    transition-duration: 0.6s;
+    transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
 
     @include autoSliderItem($width, $height, $quantity, $duration, $reverse);

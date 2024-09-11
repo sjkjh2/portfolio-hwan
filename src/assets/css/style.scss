@@ -22,8 +22,6 @@
   position: relative;
 }
 
-
-
 .main {
   position: relative;
   &.-has-popup {
@@ -38,8 +36,8 @@
     &__parallax {
       position: absolute;
       max-width: unset;
-      transform: translate3d(-50%, -50%, 0);
-      transition: transform 0.45s cubic-bezier(.2,.49,.32,.99);
+      // transform: translate3d(-50%, -50%, 0);
+      // transition: transform 0.45s cubic-bezier(.2,.49,.32,.99);
       will-change: transform;
       pointer-events: none;
       backface-visibility: hidden;
@@ -127,6 +125,7 @@
       font-size: 5rem;
     }
     &__logo {
+      display: block;
       color: $colorfff;
       font-weight: 700;
       font-size: 20rem;
@@ -286,6 +285,7 @@
         padding-left: 21rem;
         color: $color000;
         &__small {
+          display: block;
           font-size: 2rem;
         }
         &__tit {
