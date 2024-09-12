@@ -20,7 +20,7 @@
 
 @mixin menuCloseBar($aniDelay, $value) {
   animation-delay: $aniDelay;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: $transBounce;
 

@@ -18,6 +18,15 @@
       <path d="M50.792 75.56V36.872L15.368 46.568V75.56H0.200012V0.00799561H15.368V35.048L50.792 25.352V0.00799561H65.96V75.56H50.792Z" fill="black"/>
     </svg> -->
     
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+    
     <header class="header">
       <h2 class="offscreen">네비게이션 메뉴</h2>    
       <a href="/" class="header-logo" aria-label="hwan 홈페이지"><span>.hwan</span></a>
@@ -29,23 +38,70 @@
       </button>
       <div class="header-menu">
         <div class="header-menu__bg">
-          <div class="header-menu__pic -n01"></div>
-          <div class="header-menu__pic -n02"></div>
-          <div class="header-menu__pic -n03"></div>
+          <div class="header-menu__pic header-menu__pic--bespoke"></div>
+          <div class="header-menu__pic header-menu__pic--care"></div>
+          <div class="header-menu__pic header-menu__pic--adstorm"></div>
+          <div class="header-menu__pic header-menu__pic--ailife"></div>
+          <div class="header-menu__pic header-menu__pic--bao"></div>
+          <div class="header-menu__pic header-menu__pic--cpg"></div>
+          <div class="header-menu__pic header-menu__pic--dacor"></div>
         </div>
+        <h3 class="header-menu__tit"><span>Projects</span></h3>
         <nav aria-labelledby="gnbList">
           <ul class="header-menu__list" role="menu">
-            <li role="menuitem">
-              <a href="" class="header-menu__link">메뉴1 <span class="offscreen">페이지 이동</span></a>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">
+                <span class="header-menu__txt">삼성비스포크</span> <span class="offscreen">페이지 이동</span>
+              </a>
             </li>
-            <li role="menuitem">
-              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">삼성 비스포크 <span class="offscreen">페이지 이동</span></a>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">
+                <span class="header-menu__txt">삼성케어플러스</span> <span class="offscreen">페이지 이동</span>
+              </a>
             </li>
-            <li role="menuitem">
-              <a href="" class="header-menu__link">삼성 케어플러스 <span class="offscreen">페이지 이동</span></a>
+            <li class="header-menu__item" role="menuitem">
+              <a href="" class="header-menu__link">
+                <span class="header-menu__txt">ADSTORM</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="" class="header-menu__link">
+                <span class="header-menu__txt">새로운 시작 AI 라이프</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">
+                <span class="header-menu__txt">Bao Family loves Flip</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="" class="header-menu__link">
+                <span class="header-menu__txt">삼성닷컴 CPG</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="" class="header-menu__link">
+                <span class="header-menu__txt">Dacor</span> <span class="offscreen">페이지 이동</span>
+              </a>
             </li>
           </ul>
         </nav>
+        <div class="header-menu__bottom">
+          <div class="header-menu__bottom-deployment">
+            <a href="tel:010-8694-0221" class="header-menu__bottom__txt btn-underline">TEL: 010-8694-0221 <span class="btn-underline__bar"></span></a>
+            <button class="header-menu__bottom__txt btn-underline -copy-text" type="button" data-element-id="textCopyHeader">MAIL: sjkjh2@nate.com <span class="btn-underline__bar"></span></button>
+            <input id="textCopyHeader" class="offscreen" type="text" value="sjkjh2@nate.com" tabindex="-1">
+          </div>
+          <div class="header-menu__bottom-deployment">
+            <a href="" class="header-menu__bottom__txt btn-round">
+              <div class="btn-round__inner">잡코리아 이력서 <span class="offscreen">페이지 이동</span></div>
+            </a>
+            <a href="" class="header-menu__bottom__txt btn-round">
+              <div class="btn-round__inner">사람인 이력서 <span class="offscreen">페이지 이동</span></div>
+            </a>
+          </div>
+        </div>
+    
         <button type="button" class="header-menu__closed" aria-label="메뉴 닫기">
           <span class="header-menu__closed-inner">
             <span class="bar row"></span>
@@ -56,7 +112,11 @@
           <span class="header-menu__cursor-kernel"></span>
         </div>
       </div>
-    </header>    <!-- header.html -->
+    </header>
+    
+    
+    </body>
+    </html>    <!-- header.html -->
     
     <main class="main">
       <h1 class="offscreen">홈</h1>
@@ -219,7 +279,7 @@
               <div class="projects__link-txt">
                 <div class="projects__link-txt__inner">
                   <span class="projects__link-txt__small -scrollMotion -topToBottom" data-delay="0.3">Operation</span>
-                  <h3 class="projects__link-txt__tit -scrollMotion">삼성닷컴 CPG 운영</h3>
+                  <h3 class="projects__link-txt__tit -scrollMotion">삼성닷컴 CPG</h3>
                 </div>
                 <p class="projects__link-txt__desc -scrollMotion" data-delay="0.2">삼성닷컴의 제품 <br>CPG 페이지 리뉴얼 및 운영</p>
                 <div class="projects__link-txt__flag">
@@ -370,8 +430,12 @@
             <input id="textCopy" class="offscreen" type="text" value="sjkjh2@nate.com" tabindex="-1">
           </div>
           <div class="about__bottom-deployment">
-            <a href="" class="about__bottom__txt btn-round -scrollMotion -topToBottom" data-delay="0.4">잡코리아 이력서 <span class="offscreen">페이지 이동</span></a>
-            <a href="" class="about__bottom__txt btn-round -scrollMotion -topToBottom" data-delay="0.6">사람인 이력서 <span class="offscreen">페이지 이동</span></a>
+            <a href="" class="about__bottom__txt btn-round -scrollMotion -topToBottom" data-delay="0.4">
+              <div class="btn-round__inner">잡코리아 이력서 <span class="offscreen">페이지 이동</span></div>
+            </a>
+            <a href="" class="about__bottom__txt btn-round -scrollMotion -topToBottom" data-delay="0.6">
+              <div class="btn-round__inner">사람인 이력서 <span class="offscreen">페이지 이동</span></div>
+            </a>
           </div>
         </div>
       </section>
