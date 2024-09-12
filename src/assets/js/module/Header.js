@@ -2,7 +2,6 @@ import { addClass } from './utill';
 import { removeClass } from './utill';
 
 export function menuHandler() {
-  
   const body = document.querySelector('body');
   const header = document.querySelector('.header');
   const headerMenu = document.querySelector('.header-menu');
@@ -48,11 +47,11 @@ export function menuHandler() {
         removeClass(menuOpenBtn, '-change');
       }
   
-      if (currentScroll * 1.1 >= documentHeight) {
-        scrollTopMoveBtn();
-      } else {
+      // if (currentScroll * 1.1 >= documentHeight) {
+      //   scrollTopMoveBtn();
+      // } else {
         
-      }
+      // }
     }
   
     window.addEventListener('scroll', () => {

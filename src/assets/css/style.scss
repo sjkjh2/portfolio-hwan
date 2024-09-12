@@ -371,7 +371,6 @@
   }
 
   .stack {
-    margin-left: 9rem;
     padding: 5rem 0;
     border-top: 1px solid $colore0e0e0;
     &__list {
@@ -420,9 +419,11 @@
         }
       }
       .btn-round {
-        @include btnRound {
-          font-size: 2rem;
-        };
+        &__inner {
+          @include btnRound {
+            font-size: 2rem;
+          };
+        }
         
         & + .btn-round {
           margin-left: 3rem;

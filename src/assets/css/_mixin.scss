@@ -135,14 +135,14 @@
   }
 }
 
-@mixin btnUnderline($pdbottom: 0.5rem) {
+@mixin btnUnderline($pdbottom: 0.5rem, $bgColor: $color000) {
   position: relative;
   padding-bottom: $pdbottom;
   
   @content;
 
   &__bar {
-    @include btnUnderlineBar;
+    @include btnUnderlineBar($bgColor);
   }
 
   &:hover {
@@ -152,7 +152,7 @@
   }
 }
 
-@mixin btnUnderlineBar($bgColor: $color000) {
+@mixin btnUnderlineBar($bgColor) {
   overflow: hidden;
   position: absolute;
   left: 0;
