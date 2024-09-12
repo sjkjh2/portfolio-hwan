@@ -2,10 +2,18 @@
 @import "_fonts";
 @import "_variable";
 @import "_mixin";
-@import "_keyframes";
+@import "_animation";
 @import "_scrollMoveTop";
 @import "_header";
 @import "_footer";
+
+html, body, body * {
+  font-size: calc(100vw * 10 / 1920);
+
+  // @media (max-width: 1200px) {
+  //   font-size: calc(100vw * 10 / 1200);
+  // }
+}
 
 body.-has-popup {
   overflow-y: hidden;

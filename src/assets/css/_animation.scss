@@ -1,0 +1,92 @@
+@keyframes menuOpenBarTop {
+  100% {
+    transform: translate3d(200%, -600%, 0);
+  }
+}
+
+@keyframes menuOpenBarMiddle {
+  100% {
+    transform:translate3d(200%, 0, 0);
+  }
+}
+
+@keyframes menuOpenBarBottom {
+  100% {
+    transform:translate3d(200%, 600%, 0);
+  }
+}
+
+@keyframes menuCloseBarRow {
+  100% {
+    transform: translate3d(300%, 0, 0);
+  }
+}
+
+@keyframes menuCloseBarCol {
+  100% {
+    transform: translate3d(0, -300%, 0);
+  }
+}
+
+@keyframes mouseBounce {
+  0% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(4);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes visualInfiniteLoop {
+  0% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  100% {
+    transform: translate3d(100%, -50%, 0);
+  }
+}
+
+@keyframes btnUnderlineBefore {
+  100% {
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+@keyframes btnUnderlineAfter {
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes autoRun {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes reverseAutoRun {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes scrollTopBtn {
+  0% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  30% {
+    transform: translate3d(-50%, -30%, 0);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+}

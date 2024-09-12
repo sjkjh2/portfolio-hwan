@@ -5,11 +5,6 @@ html, body, body * {
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  font-size: calc(100vw * 10 / 1920);
   letter-spacing: -0.02em;
   word-break: keep-all;
-
-  @media (max-width: 1200px) {
-    font-size: calc(100vw * 10 / 1200);
-  }
 }
