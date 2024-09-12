@@ -16,8 +16,6 @@ export function gsapScrollHandler() {
     let y = 0;
     let delay = elDelay;
     let duration = 1;
-    let visible = 1;
-    let invisible = 0;
     let ease = 'bounce';
 
     if (el.classList.contains('-topToBottom')) {
@@ -27,8 +25,8 @@ export function gsapScrollHandler() {
     }
 
     gsap.fromTo(el, 
-      {autoAlpha: invisible, x: x, y: y}, 
-      {autoAlpha: visible, x: 0, y: 0, delay: elDelay, duration: duration, overwrite: 'auto', ease: ease}
+      {autoAlpha: 0, x: x, y: y}, 
+      {autoAlpha: 1, x: 0, y: 0, delay: elDelay, duration: duration, overwrite: 'auto', ease: ease}
     );
   };
 
@@ -37,7 +35,7 @@ export function gsapScrollHandler() {
 
     ScrollTrigger.create({
       trigger: el,
-      start: 'center bottom',
+      start: 'top bottom',
       end: 'bottom top',
       markers: false,
       onEnter: () => {
