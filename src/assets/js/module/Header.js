@@ -6,14 +6,65 @@ export function menuHandler() {
   const body = document.querySelector('body');
   const header = document.querySelector('.header');
   const headerMenu = document.querySelector('.header-menu');
-  const main = document.querySelector('.main');
   const mouseCursor = document.querySelector('.header-menu__cursor');
   const menuListWrap = document.querySelector('.header-menu__list');
   const menuItems = document.querySelectorAll('.header-menu__link');
   const menuBackgrounds = document.querySelectorAll('.header-menu__pic');
+  const headerBarElem = document.querySelector('.header-scroll');
+  const main = document.querySelector('.main');
+  const visual = document.querySelector('.visual');
+  let documentHeight;
+  let visualBreakpoint;
+  let windowInnerHeight;
+  let maxScrollValue;
   let currentBackground;
   let cursorHandler;
   let menuOpenBtn;
+
+  function headerScrollHandler() {
+    function onResize() {
+      windowInnerHeight = window.innerHeight;
+      documentHeight = document.body.offsetHeight;
+      maxScrollValue = documentHeight - windowInnerHeight;
+      visualBreakpoint = visual.offsetHeight;
+    }
+  
+    function headerProgress() {
+      const scrollPer = scrollY / maxScrollValue;
+      const currentScroll = scrollY + window.innerHeight;
+      menuOpenBtn = document.querySelector('.header-menu__open');
+
+      headerBarElem.style.height = scrollPer * 100 + '%';
+  
+      if (scrollY >= visualBreakpoint / 1.5) {
+        addClass(headerBarElem, '-change');
+      } else {
+        removeClass(headerBarElem, '-change');
+      }
+  
+      if (scrollY >= visualBreakpoint / 2) {
+        addClass(menuOpenBtn, '-change');
+      } else {
+        removeClass(menuOpenBtn, '-change');
+      }
+  
+      if (currentScroll * 1.1 >= documentHeight) {
+        scrollTopMoveBtn();
+      } else {
+        
+      }
+    }
+  
+    window.addEventListener('scroll', () => {
+      headerProgress();
+    });
+    
+  
+    window.addEventListener('resize', onResize);
+  
+    onResize()
+  }
+  headerScrollHandler();
 
   function menuOpenedHandler() {
   

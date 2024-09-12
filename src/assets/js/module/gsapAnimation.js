@@ -45,7 +45,7 @@ export function gsapScrollHandler() {
   });
 }
 
-export function visualHandler() {
+export function mainVisualHandler() {
   const parallaxElem = document.querySelectorAll('.visual__parallax');
   let mousePos = { x: 0, y: 0 };
   let rotateDegree = 0;
