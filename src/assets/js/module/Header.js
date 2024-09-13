@@ -6,9 +6,7 @@ export function menuHandler() {
   const header = document.querySelector('.header');
   const headerMenu = document.querySelector('.header-menu');
   const mouseCursor = document.querySelector('.header-menu__cursor');
-  const menuListWrap = document.querySelector('.header-menu__list');
-  const menuItems = document.querySelectorAll('.header-menu__link');
-  const menuBackgrounds = document.querySelectorAll('.header-menu__pic');
+  
   const headerBarElem = document.querySelector('.header-scroll');
   const main = document.querySelector('.main');
   const visual = document.querySelector('.visual');
@@ -16,7 +14,7 @@ export function menuHandler() {
   let visualBreakpoint;
   let windowInnerHeight;
   let maxScrollValue;
-  let currentBackground;
+  
   let cursorHandler;
   let menuOpenBtn;
 
@@ -30,7 +28,6 @@ export function menuHandler() {
   
     function headerProgress() {
       const scrollPer = scrollY / maxScrollValue;
-      const currentScroll = scrollY + window.innerHeight;
       menuOpenBtn = document.querySelector('.header-menu__open');
 
       headerBarElem.style.height = scrollPer * 100 + '%';
@@ -73,7 +70,7 @@ export function menuHandler() {
       addClass(headerMenu, '-opened');
       addClass(main, '-has-popup');
       removeClass(headerMenu, '-closed');
-      linkMouseCursor();
+      // linkMouseCursor();
     }
   
     function delayClass() {
@@ -142,19 +139,10 @@ export function menuHandler() {
   
     function delayLinkHandler(elem) {
       const url = elem.getAttribute('href');
-      let start;
-    
-      function delayLink(time) {
-        if (!start) start = time;
-        const elapsed = time - start;
-    
-        if (elapsed >= 1100) {
-          window.location.href = url;
-        } else {
-          requestAnimationFrame(delayLink);
-        }
-      }
-      requestAnimationFrame(delayLink);
+      
+      setTimeout(() => {
+        window.location.href = url;
+      }, 1100);
     }
   
     document.addEventListener('keydown', (event) => {
@@ -191,71 +179,25 @@ export function menuHandler() {
   }
   menuOpenedHandler();
 
-  function linkMouseCursor() {
-    cursorHandler = function(event) {
-      const cursorHalfWidth = mouseCursor.clientWidth / 2;
-      const cursorHalfHeight = mouseCursor.clientHeight / 2;
+  // function linkMouseCursor() {
+  //   cursorHandler = function(event) {
+  //     const cursorHalfWidth = mouseCursor.clientWidth / 2;
+  //     const cursorHalfHeight = mouseCursor.clientHeight / 2;
   
-      mouseCursor.style.transform = `
-        translate(${event.clientX - cursorHalfWidth}px, ${event.clientY - cursorHalfHeight}px) 
-      `;
-    }
-    headerMenu.addEventListener('mousemove', cursorHandler);
-  }
+  //     mouseCursor.style.transform = `
+  //       translate(${event.clientX - cursorHalfWidth}px, ${event.clientY - cursorHalfHeight}px) 
+  //     `;
+  //   }
+  //   headerMenu.addEventListener('mousemove', cursorHandler);
+  // }
 
-  function linkMouseCursorClassHandler(action) {
-    if (action === 'mouseover') {
-      addClass(mouseCursor, '-grow');
-    } else if (action === 'mouseout') {
-      removeClass(mouseCursor, '-grow');
-    }
-  }
+  // function linkMouseCursorClassHandler(action) {
+  //   if (action === 'mouseover') {
+  //     addClass(mouseCursor, '-grow');
+  //   } else if (action === 'mouseout') {
+  //     removeClass(mouseCursor, '-grow');
+  //   }
+  // }
 
-  function menuHoverHandler() {
-    function addIndex(elem) {
-      elem.forEach((elem, index) => {
-        elem.dataset.index = index;
-      })
-    }
   
-    function handlerMenuItem(event, action, currentBackground) {
-      let target = event.target.closest('.header-menu__link');
-  
-      if (!target) return;
-    
-      if (target.classList.contains('header-menu__link')) {
-        const index = target.dataset.index;
-        const correspondingBackground = document.querySelector(`.header-menu__pic[data-index="${index}"]`);
-        if (correspondingBackground) {
-          if (action === 'mouseover' && currentBackground) {
-            removeClass(currentBackground, '-visible');
-          }
-          if (action === 'mouseover') {
-            addClass(correspondingBackground, '-visible');
-          } else if (action === 'mouseout') {
-            removeClass(currentBackground, '-visible');
-          }
-          return correspondingBackground;
-        }
-      }
-      return null;
-    }
-  
-    function menuActionHandler() {
-      addIndex(menuItems);
-      addIndex(menuBackgrounds);
-  
-      menuListWrap.addEventListener('mouseover', (event) => {
-        currentBackground = handlerMenuItem(event, 'mouseover', currentBackground);
-        linkMouseCursorClassHandler('mouseover');
-      });
-    
-      menuListWrap.addEventListener('mouseout', (event) => {
-        handlerMenuItem(event, 'mouseout', currentBackground);
-        linkMouseCursorClassHandler('mouseout');
-      });
-    }
-    menuActionHandler();
-  }
-  menuHoverHandler();
 }

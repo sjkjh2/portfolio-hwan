@@ -379,41 +379,41 @@
       }
     }
 
-    &__cursor {
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -50%);
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      pointer-events: none;
-      &-kernel {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 3rem;
-        height: 3rem;
-        background-color: rgba(255, 255, 255, 0);
-        border-radius: 50%;
-        // will-change: auto;
-        transition-property: transform, background-color;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-in-out;
-      }
-      &.-grow {
-        .header-menu__cursor-kernel {
-          background-color: rgba(0, 0, 0, 0.5);
-          transform: translate(-50%, -50%) scale(3);
-          backdrop-filter: invert(0.7);
-          animation-name: mouseBounce;
-          animation-duration: 2s;
-          animation-iteration-count: infinite;
-        }
-      }
-    }
+    // &__cursor {
+    //   overflow: hidden;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   transform: translate(-50%, -50%);
+    //   width: 15rem;
+    //   height: 15rem;
+    //   border-radius: 50%;
+    //   pointer-events: none;
+    //   &-kernel {
+    //     position: absolute;
+    //     left: 50%;
+    //     top: 50%;
+    //     transform: translate(-50%, -50%);
+    //     width: 3rem;
+    //     height: 3rem;
+    //     background-color: rgba(255, 255, 255, 0);
+    //     border-radius: 50%;
+    //     // will-change: auto;
+    //     transition-property: transform, background-color;
+    //     transition-duration: 0.3s;
+    //     transition-timing-function: ease-in-out;
+    //   }
+    //   &.-grow {
+    //     .header-menu__cursor-kernel {
+    //       background-color: rgba(0, 0, 0, 0.5);
+    //       transform: translate(-50%, -50%) scale(3);
+    //       backdrop-filter: invert(0.7);
+    //       animation-name: mouseBounce;
+    //       animation-duration: 2s;
+    //       animation-iteration-count: infinite;
+    //     }
+    //   }
+    // }
   }
 
   &-menu.-opened {

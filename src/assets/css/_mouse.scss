@@ -1,0 +1,109 @@
+.js-mouse {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  opacity: 1;
+  transition: opacity 0.2s;
+  z-index: 100;
+
+  &.-spotlight,
+  &.-click {
+    .js-mouse__cursor {
+      transform: scale(0.625);
+    }
+  }
+
+  &.-media {
+    .js-mouse__cursor {
+      background-color: transparent;
+      transform: scale(2.25);
+    }
+
+    .js-mouse__img {
+      // background-image: url('/images/main_deco_pc.png');
+      opacity: 1;
+    }
+  }
+
+  &.-play {
+    .js-mouse__cursor {
+      transform: scale(1);
+    }
+
+    .js-mouse__img {
+      opacity: 1;
+      // background-image: url('/images/main_video_btn_pc.png');
+    }
+  }
+
+  &.-text {
+    .js-mouse__cursor {
+      transform: scale(1);
+    }
+
+    .js-mouse__txt {
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &.-touched,
+  &.-disable,
+  &.-hidden {
+    opacity: 0;
+  }
+
+  &__cursor {
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    transform: scale(0.125);
+    transition: transform 0.3s;
+    pointer-events: none;
+    // @include vw-max(top, -80);
+    // @include vw-max(left, -80);
+    // @include vw-max(width, 160);
+    // @include vw-max(height, 160);
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: center / contain no-repeat;
+    // background-image: url('/images/cursor_placeholde.png');
+    opacity: 0;
+    transition:
+      opacity 0.3s,
+      background-image 0.3s;
+    pointer-events: none;
+  }
+
+  &__txt {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // font-family: $en;
+    text-align: center;
+    // color: $color-white;
+    opacity: 0;
+    pointer-events: none;
+    // @include vw-max(top, -80);
+    // @include vw-max(left, -80);
+    // @include vw-max(width, 160);
+    // @include vw-max(height, 160);
+    // @include vw-max(font-size, 26);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .js-mouse {
+    display: none !important;
+  }
+}

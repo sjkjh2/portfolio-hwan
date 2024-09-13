@@ -4,6 +4,7 @@ import { setupCopyText } from './module/utill';
 import { refresh } from './module/utill';
 import { topButtonHandler } from './module/moveUp';
 import { menuHandler } from './module/Header';
+import Mouse from './module/Mouse';
 import { gsapScrollHandler } from './module/gsapAnimation';
 import { mainVisualHandler } from './module/gsapAnimation';
 
@@ -41,3 +42,5 @@ function projectsHandler() {
     linkHover(event, 'mouseout');
   });
 }
+
+const mouse = new Mouse();
