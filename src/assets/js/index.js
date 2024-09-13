@@ -4,7 +4,8 @@ import { setupCopyText } from './module/utill';
 import { refresh } from './module/utill';
 import { topButtonHandler } from './module/moveUp';
 import { menuHandler } from './module/Header';
-import Mouse from './module/Mouse';
+// import Mouse from './module/MouseCursor';
+import { mouseHoverHandler } from './module/MouseCursor';
 import { gsapScrollHandler } from './module/gsapAnimation';
 import { mainVisualHandler } from './module/gsapAnimation';
 
@@ -14,6 +15,7 @@ topButtonHandler();
 menuHandler();
 gsapScrollHandler();
 mainVisualHandler();
+mouseHoverHandler();
 
 projectsHandler();
 
@@ -43,4 +45,4 @@ function projectsHandler() {
   });
 }
 
-const mouse = new Mouse();
+// const mouse = new Mouse();
