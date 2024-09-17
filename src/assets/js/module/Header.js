@@ -4,9 +4,9 @@ import { removeClass } from './utill';
 export function menuHandler() {
   const body = document.querySelector('body');
   const header = document.querySelector('.header');
+  const logo = document.querySelector('.header-logo');
   const headerMenu = document.querySelector('.header-menu');
-  const mouseCursor = document.querySelector('.header-menu__cursor');
-  
+  // const mouseCursor = document.querySelector('.header-menu__cursor');
   const headerBarElem = document.querySelector('.header-scroll');
   const main = document.querySelector('.main');
   const visual = document.querySelector('.visual');
@@ -14,34 +14,43 @@ export function menuHandler() {
   let visualBreakpoint;
   let windowInnerHeight;
   let maxScrollValue;
-  
-  let cursorHandler;
+  // let cursorHandler;
   let menuOpenBtn;
+  let menuOpenBtnOffsetTop;
+  let logoOffsetTop;
 
   function headerScrollHandler() {
+    menuOpenBtn = document.querySelector('.header-menu__open');
+
     function onResize() {
       windowInnerHeight = window.innerHeight;
       documentHeight = document.body.offsetHeight;
       maxScrollValue = documentHeight - windowInnerHeight;
       visualBreakpoint = visual.offsetHeight;
+      menuOpenBtnOffsetTop = menuOpenBtn.offsetTop;
+      logoOffsetTop = logo.offsetTop;
     }
   
     function headerProgress() {
       const scrollPer = scrollY / maxScrollValue;
-      menuOpenBtn = document.querySelector('.header-menu__open');
-
       headerBarElem.style.height = scrollPer * 100 + '%';
   
-      if (scrollY >= visualBreakpoint / 1.5) {
+      if (scrollY >= visualBreakpoint / 1.2) {
         addClass(headerBarElem, '-change');
       } else {
         removeClass(headerBarElem, '-change');
       }
   
-      if (scrollY >= visualBreakpoint / 2) {
+      if (scrollY >= visualBreakpoint - menuOpenBtnOffsetTop) {
         addClass(menuOpenBtn, '-change');
       } else {
         removeClass(menuOpenBtn, '-change');
+      }
+
+      if (scrollY >= visualBreakpoint - logoOffsetTop) {
+        addClass(logo, '-change');
+      } else {
+        removeClass(logo, '-change');
       }
   
       // if (currentScroll * 1.1 >= documentHeight) {
@@ -98,10 +107,10 @@ export function menuHandler() {
       addClass(headerMenu, '-closed');
       delayClass();
   
-      if (cursorHandler) {
-        window.removeEventListener('mousemove', cursorHandler);
-        cursorHandler = null;
-      }
+      // if (cursorHandler) {
+      //   window.removeEventListener('mousemove', cursorHandler);
+      //   cursorHandler = null;
+      // }
   
       removeClass(main, '-has-popup');
     }
