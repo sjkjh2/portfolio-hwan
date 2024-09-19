@@ -17,7 +17,8 @@ export function gsapScrollHandler() {
     let y = 0;
     let delay = elDelay;
     let duration = 1;
-    let ease = 'bounce';
+    // let ease = 'bounce';
+    let ease = 'power3.out';
 
     if (el.classList.contains('-topToBottom')) {
       y = -50;
@@ -92,14 +93,16 @@ export function mainVisualHandler() {
     opacity: 0,
     delay: 1,
     duration: 2,
-    ease: 'bounce',
+    // ease: 'bounce',
+    ease: 'power3.out',
   }, '2.5')
   .from('.visual__tit', {
     y: -150,
     opacity: 0,
     delay: 0.6,
     duration: 2,
-    ease: 'bounce',
+    // ease: 'bounce',
+    ease: 'power3.out',
   }, '3')
   .from('.-hide', {
     opacity: 0,

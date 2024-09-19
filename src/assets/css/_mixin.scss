@@ -1,9 +1,9 @@
 @mixin menuOpenBar($translate, $value, $aniDelay) {
   transform: $translate;
   animation-delay: $aniDelay;
-  animation-duration: 0.6s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  animation-timing-function: $transBounce;
+  animation-timing-function: $transEaseInOut;
 
   @if ($value == 'top') {
     animation-name: menuOpenBarTop;
@@ -20,9 +20,9 @@
 
 @mixin menuCloseBar($aniDelay, $value) {
   animation-delay: $aniDelay;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  animation-timing-function: $transBounce;
+  animation-timing-function: $transEaseInOut;
 
   @if ($value == 'row') {
     animation-name: menuCloseBarRow;
@@ -71,7 +71,7 @@
     $bgColor: $colorfff, 
     $arrSize: 1rem,
     $arrRight: 1.7rem,
-    $function: $transBounce
+    $function: $transEaseInOut
   ) {
   display: $display;
   align-items: center;
@@ -191,7 +191,7 @@
     animation-name: btnUnderlineAfter;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
-    animation-timing-function: $transBounce;
+    animation-timing-function: $transEaseInOut;
     animation-delay: 0.3s;
   }
 }
@@ -234,7 +234,7 @@
       z-index: 1;
       transition-property: filter, transform;
       transition-duration: 0.3s, 0.5s;
-      transition-timing-function: $transBounce;
+      transition-timing-function: $transEaseInOut;
       backface-visibility: hidden;
     }
 
@@ -249,7 +249,7 @@
       font-size: 2rem;
       transition-property: transform, color;
       transition-duration: 0.3s;
-      transition-timing-function: $transBounce;
+      transition-timing-function: $transEaseInOut;
       white-space: nowrap;
       
     }
