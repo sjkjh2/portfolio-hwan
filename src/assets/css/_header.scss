@@ -13,28 +13,40 @@
     display: block;
     position: relative;
     width: 80%;
-    height: 8rem;
+    height: 6rem;
     margin: 1.5rem auto 0;
     // background-color: red;
     svg {
       position: absolute;
       left: 50%;
-      top: 15%;
-      width: 4rem;
+      top: 20%;
+      width: 3rem;
       transform: translate(-50%, 0);
+      // border: 1px solid blue;
+      pointer-events: none;
     }
     &__path {
-      transition: 0.3s fill ease;
+      transition: 0.3s ease;
+      // &:nth-child(2) {
+      //   transform: translate3d(0, -23%, 0);
+      // }
+      // &:nth-child(3) {
+      //   transform: translate3d(0, -45%, 0);
+      // }
+      // &:nth-child(4) {
+      //   transform: translate3d(0, -70%, 0);
+      // }
     }
-    &__path:not(:last-child) {
-      opacity: 0;
-    }
+    // &__path:not(:first-child) {
+    //   opacity: 0;
+    // }
 
-    &:hover {
-      .header-logo__path {
-        opacity: 1;
-      }
-    }
+    // &:hover {
+    //   .header-logo__path {
+    //     opacity: 1;
+    //     transform: translate3d(0, 0, 0);
+    //   }
+    // }
     &.-change {
       .header-logo__path {
         fill: $color000;
