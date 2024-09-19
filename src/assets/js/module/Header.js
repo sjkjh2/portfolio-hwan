@@ -21,14 +21,11 @@ export function menuHandler() {
   let logoOffsetTop;
   let headerOffsetHeight;
 
-  console.log(window.innerWidth);
-
   function headerScrollHandler() {
     menuOpenBtn = document.querySelector('.header-menu__open');
     let prevWindowWidth = window.innerWidth;
 
     function onResize() {
-      // 현재 창 크기와 문서 높이 등 필요한 값 업데이트
       windowInnerWidth = window.innerWidth;
       windowInnerHeight = window.innerHeight;
       documentHeight = document.body.offsetHeight;
@@ -38,7 +35,6 @@ export function menuHandler() {
       logoOffsetTop = logo.offsetTop;
       headerOffsetHeight = header.offsetHeight;
   
-      // 1200px 이상에서 이하로, 혹은 이하에서 이상으로 변경 시 값 리셋
       if ((prevWindowWidth > 1200 && windowInnerWidth <= 1200) || (prevWindowWidth <= 1200 && windowInnerWidth > 1200)) {
         headerBarElem.style.height = '';
         headerBarElem.style.width = '';
@@ -48,7 +44,7 @@ export function menuHandler() {
         removeClass(header, '-change');
       }
   
-      prevWindowWidth = windowInnerWidth; // 현재 창 너비 저장
+      prevWindowWidth = windowInnerWidth;
     }
   
     function headerProgress() {
@@ -85,7 +81,6 @@ export function menuHandler() {
       }
     }
   
-    // 스크롤 이벤트와 리사이즈 이벤트 리스너 추가
     window.addEventListener('scroll', headerProgress);
     window.addEventListener('resize', onResize);
   
