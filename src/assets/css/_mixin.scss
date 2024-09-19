@@ -196,7 +196,14 @@
   }
 }
 
-@mixin autoSlider($width: 16rem, $height: 16rem, $paddingCol: 5rem, $quantity: null, $duration: 20s, $reverse: false) {
+@mixin autoSlider(
+    $width: 16rem, 
+    $height: 16rem, 
+    $paddingCol: 5rem, 
+    $quantity: null, 
+    $duration: 20s, 
+    $reverse: false
+  ) {
   overflow: hidden;
   display: flex;
   position: relative;

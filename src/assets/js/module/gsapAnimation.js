@@ -37,7 +37,8 @@ export function gsapScrollHandler() {
       trigger: el,
       start: 'top bottom',
       end: 'bottom top',
-      markers: false,
+      toggleActions: "play none restart none",
+      // markers: true,
       onEnter: () => {
         animate(el);
       },

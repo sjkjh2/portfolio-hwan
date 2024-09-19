@@ -12,62 +12,84 @@ export function menuHandler() {
   const visual = document.querySelector('.visual');
   let documentHeight;
   let visualBreakpoint;
+  let windowInnerWidth;
   let windowInnerHeight;
   let maxScrollValue;
   // let cursorHandler;
   let menuOpenBtn;
   let menuOpenBtnOffsetTop;
   let logoOffsetTop;
+  let headerOffsetHeight;
+
+  console.log(window.innerWidth);
 
   function headerScrollHandler() {
     menuOpenBtn = document.querySelector('.header-menu__open');
+    let prevWindowWidth = window.innerWidth;
 
     function onResize() {
+      // 현재 창 크기와 문서 높이 등 필요한 값 업데이트
+      windowInnerWidth = window.innerWidth;
       windowInnerHeight = window.innerHeight;
       documentHeight = document.body.offsetHeight;
       maxScrollValue = documentHeight - windowInnerHeight;
       visualBreakpoint = visual.offsetHeight;
       menuOpenBtnOffsetTop = menuOpenBtn.offsetTop;
       logoOffsetTop = logo.offsetTop;
+      headerOffsetHeight = header.offsetHeight;
+  
+      // 1200px 이상에서 이하로, 혹은 이하에서 이상으로 변경 시 값 리셋
+      if ((prevWindowWidth > 1200 && windowInnerWidth <= 1200) || (prevWindowWidth <= 1200 && windowInnerWidth > 1200)) {
+        headerBarElem.style.height = '';
+        headerBarElem.style.width = '';
+        removeClass(headerBarElem, '-change');
+        removeClass(menuOpenBtn, '-change');
+        removeClass(logo, '-change');
+        removeClass(header, '-change');
+      }
+  
+      prevWindowWidth = windowInnerWidth; // 현재 창 너비 저장
     }
   
     function headerProgress() {
       const scrollPer = scrollY / maxScrollValue;
-      headerBarElem.style.height = scrollPer * 100 + '%';
   
-      if (scrollY >= visualBreakpoint / 1.2) {
-        addClass(headerBarElem, '-change');
-      } else {
-        removeClass(headerBarElem, '-change');
-      }
+      if (windowInnerWidth > 1200) {
+        headerBarElem.style.height = scrollPer * 100 + '%';
   
-      if (scrollY >= visualBreakpoint - menuOpenBtnOffsetTop) {
-        addClass(menuOpenBtn, '-change');
-      } else {
-        removeClass(menuOpenBtn, '-change');
-      }
-
-      if (scrollY >= visualBreakpoint - logoOffsetTop) {
-        addClass(logo, '-change');
-      } else {
-        removeClass(logo, '-change');
-      }
+        if (scrollY >= visualBreakpoint / 1.2) {
+          addClass(headerBarElem, '-change');
+        } else {
+          removeClass(headerBarElem, '-change');
+        }
   
-      // if (currentScroll * 1.1 >= documentHeight) {
-      //   scrollTopMoveBtn();
-      // } else {
-        
-      // }
+        if (scrollY >= visualBreakpoint - menuOpenBtnOffsetTop) {
+          addClass(menuOpenBtn, '-change');
+        } else {
+          removeClass(menuOpenBtn, '-change');
+        }
+  
+        if (scrollY >= visualBreakpoint - logoOffsetTop) {
+          addClass(logo, '-change');
+        } else {
+          removeClass(logo, '-change');
+        }
+      } else {
+        headerBarElem.style.width = scrollPer * 100 + '%';
+  
+        if (scrollY >= 1) {
+          addClass(header, '-change');
+        } else {
+          removeClass(header, '-change');
+        }
+      }
     }
   
-    window.addEventListener('scroll', () => {
-      headerProgress();
-    });
-    
-  
+    // 스크롤 이벤트와 리사이즈 이벤트 리스너 추가
+    window.addEventListener('scroll', headerProgress);
     window.addEventListener('resize', onResize);
   
-    onResize()
+    onResize(); // 초기화 시 호출
   }
   headerScrollHandler();
 

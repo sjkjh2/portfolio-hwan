@@ -10,3 +10,13 @@
     font-size: 1.8rem;
   }
 }
+
+@media (max-width: $browserSizeTablet) {
+  .footer {
+    height: 6rem;
+    margin-left: 0;
+    &__copy {
+      font-size: 1.4rem;
+    }
+  }
+}

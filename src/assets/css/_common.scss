@@ -11,9 +11,13 @@
 html, body, body * {
   font-size: calc(100vw * 10 / 1920);
 
-  // @media (max-width: 1200px) {
-  //   font-size: calc(100vw * 10 / 1200);
-  // }
+  @media (max-width: $browserSizeTablet) {
+    font-size: calc(100vw * 10 / 1200);
+  }
+
+  @media (max-width: $browserSizeMobile) {
+    font-size: calc(100vw * 10 / 768);
+  }
 }
 
 body.-has-popup {

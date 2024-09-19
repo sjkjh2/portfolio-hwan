@@ -1,22 +1,5 @@
 @import "_common";
 
-// svg {
-//   margin: 0 auto;
-//   fill: none;
-//   width: 100px;
-//   stroke-width: 2px;
-// }
-// path {
-//   fill: blue;
-//   stroke-dasharray: 500;
-//   stroke-dashoffset: 400;
-//   animation: path 1s forwards;
-// }
-// @keyframes path {
-//   100% {stroke-dashoffset: 0;}
-// }
-
-
 .wrap {
   position: relative;
 }
@@ -133,9 +116,6 @@
           fill: $colorfff;
         }
       }
-      // color: $colorfff;
-      // font-weight: 700;
-      // font-size: 20rem;
     }
   }
 
@@ -311,6 +291,7 @@
         color: $color000;
         &__small {
           display: block;
+          margin-top: -3rem;
           font-size: 2rem;
         }
         &__tit {
@@ -442,3 +423,109 @@
   }
 }
 
+@media (max-width: $browserSizeTablet) {
+  .main {
+    .visual {
+      height: 62.5rem;
+      &__parallax {
+        &--txt {
+          top: calc(50% - 2rem);
+        }
+      }
+      &__tit {
+        font-size: 4rem;
+      }
+      &__logo {
+        padding-top: 3rem;
+        svg {
+          width: 45rem;
+        }
+      }
+    }
+  
+    .projects {
+      margin-left: 0;
+      &__heading {
+        padding: 12rem 0 12rem 14rem;
+        &__tit {
+          font-size: 6rem;
+          line-height: 1.1;
+          width: 45rem;
+        }
+        &__desc {
+          margin-top: 2rem;
+          font-size: 2.6rem;
+        }
+      }
+      &__item {
+        height: 35rem;
+      }
+      &__link {
+        &-txt {
+          padding-left: 14rem;
+          &__tit {
+            width: 45rem;
+            font-size: 3.5rem;
+          }
+          &__desc {
+            font-size: 3.5rem;
+          }
+          &__flag {
+            bottom: 5rem;
+            left: 59.3rem;
+          }
+        }
+      }
+    }
+  
+    .stack {
+      padding: 3rem 0;
+      &__list {
+        @include autoSlider($width: 10rem, $height: 10rem, $paddingCol: 3rem, $quantity: 10, $duration: 30s);
+        &--reverse {
+          @include autoSlider($width: 10rem, $height: 10rem, $paddingCol: 3rem, $quantity: 11, $duration: 35s, $reverse: true);
+        }
+      }
+    }
+  
+    .about {
+      margin-left: 0;
+      padding: 12rem 14rem;
+      &__tit {
+        font-size: 2rem;
+      }
+      &__tit02 {
+        font-size: 4rem;
+      }
+      &__copy {
+        margin-top: 4rem;
+        font-size: 4.3rem;
+      }
+      &__desc {
+        margin-top: 2rem;
+        font-size: 2.6rem;
+      }
+      &__bottom {
+        margin-top: 5rem;
+        padding-top: 3rem;
+        &__txt {
+          font-size: 2rem;
+          & + .about__bottom__txt {
+            margin-left: 3rem;
+          }
+        }
+        .btn-round {
+          &__inner {
+            @include btnRound {
+              font-size: 1.8rem;
+            };
+          }
+          
+          & + .btn-round {
+            margin-left: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -62,3 +62,14 @@
     bottom: 14rem;
   }
 }
+
+@media (max-width: $browserSizeTablet) {
+  .scroll-up {
+    width: 6rem;
+    height: 6rem;
+  
+    &.-show {
+      bottom: 10rem;
+    }
+  }
+}
