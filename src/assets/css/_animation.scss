@@ -1,18 +1,18 @@
 @keyframes menuOpenBarTop {
   100% {
-    transform: translate3d(200%, -600%, 0);
+    transform: translate3d(150%, calc(-50% + -0.7rem), 0);
   }
 }
 
 @keyframes menuOpenBarMiddle {
   100% {
-    transform:translate3d(200%, 0, 0);
+    transform:translate3d(150%, 0, 0);
   }
 }
 
 @keyframes menuOpenBarBottom {
   100% {
-    transform:translate3d(200%, 600%, 0);
+    transform:translate3d(150%, calc(-50% + 0.7rem), 0);
   }
 }
 

@@ -27,7 +27,7 @@ export function gsapScrollHandler() {
 
     gsap.fromTo(el, 
       {autoAlpha: 0, x: x, y: y}, 
-      {autoAlpha: 1, x: 0, y: 0, delay: elDelay, duration: duration, overwrite: 'auto', ease: ease}
+      {autoAlpha: 1, x: 0, y: 0, delay: elDelay, duration: duration, ease: ease}
     );
   };
 
@@ -38,9 +38,10 @@ export function gsapScrollHandler() {
       trigger: el,
       start: 'top bottom',
       end: 'bottom top',
+      overwrite: 'auto',
       toggleActions: "play none restart none",
       // markers: true,
-      onEnter: () => {
+      onEnter: ()=> {
         animate(el);
       },
     });
