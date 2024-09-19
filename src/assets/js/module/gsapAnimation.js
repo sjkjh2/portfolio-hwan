@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { addClass } from './utill';
 import { removeClass } from './utill';
+import { detectDeviceType } from './utill';
 
 export function gsapScrollHandler() {
   gsap.registerPlugin(ScrollTrigger);
@@ -67,7 +68,12 @@ export function mainVisualHandler() {
   });
 
   // 애니메이션 초기화
-  const timeline = gsap.timeline({ defaults: { duration: 1.5, ease: 'bounce' } });
+  const timeline = gsap.timeline({
+    defaults: { duration: 1.5, ease: 'power3.out' },
+    onComplete: () => {
+      parallaxStart();
+    }
+  });
 
   Array.from(parallaxElem)
     .filter((el) => !el.classList.contains('visual__parallax--txt'))
@@ -76,7 +82,7 @@ export function mainVisualHandler() {
         y: el.offsetHeight / 2 + +el.dataset.distance,
         opacity: 0,
         duration: 3.5,
-        ease: 'power3.out',
+        overwrite: 'auto',
       }, index * 0.2);
     });
 
@@ -85,12 +91,14 @@ export function mainVisualHandler() {
     opacity: 0,
     delay: 1,
     duration: 2,
+    ease: 'bounce',
   }, '2.5')
   .from('.visual__tit', {
     y: -150,
     opacity: 0,
     delay: 0.6,
     duration: 2,
+    ease: 'bounce',
   }, '3')
   .from('.-hide', {
     opacity: 0,
@@ -113,7 +121,7 @@ export function mainVisualHandler() {
         y: mousePos.y * speady,
         z: zValue * speadz,
         rotateY: rotateDegree * rotateSpeed,
-        overwrite: false,
+        overwrite: 'auto',
         ease: "power3.out",
       });
     });
@@ -157,14 +165,17 @@ export function mainVisualHandler() {
     updateParallax();
   }
 
-  
-  visual.addEventListener('mousemove', onMouseMove);
-  visual.addEventListener('touchstart', onTouchStart, { passive: true });
-  visual.addEventListener('touchend', onTouchEnd, { passive: true });
+  function parallaxStart() {
+    visual.addEventListener('mousemove', onMouseMove);
+    visual.addEventListener('touchstart', onTouchStart, { passive: true });
+    visual.addEventListener('touchend', onTouchEnd, { passive: true });
+  }
   window.addEventListener('resize', onResize);
 
+  // 초기 호출
   updateParallax();
 }
+
 
 
 // export function mainVisualHandler() {
