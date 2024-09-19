@@ -597,7 +597,7 @@
         align-items: flex-start;
         padding: 10rem 0 10rem 8rem;
         &__tit {
-          font-size: 8rem;
+          font-size: 5rem;
           width: unset;
         }
         &__desc {
@@ -611,13 +611,13 @@
       &__link {
         padding: 8rem;
         &:hover .projects__link__bg {
-          transform: scale(1.5);
-          // filter: initial;
+          transform: unset;
+          filter: unset;
         }
         &:hover .projects__link-txt {
           color: $colorfff;
           &__flag {
-            opacity: unset;
+            opacity: 1;
             .txt {
               color: $colorfff;
               transform: unset;
@@ -625,7 +625,7 @@
             .-arrow {
               opacity: unset;
               path {
-                fill: unset;
+                fill: $colorfff;
               }
             }
           }
@@ -638,30 +638,38 @@
         }
         &__bg {
           @include background($size: cover);
-          transform: scale(1.5);
+          transform: none;
           transition-property: unset;
-          filter: brightness(0.4) blur(0.5rem);
-          // &--bespoke {
-          //   background-position: top -8rem center;
-          // }
-          // &--care {
-          //   background-position: top -11rem center;
-          // }
-          // &--adstorm {
-          //   background-position: top -5rem center;
-          // }
-          // &--ailife {
-          //   background-position: top center;
-          // }
-          // &--bao {
-          //   background-position: top center;
-          // }
-          // &--cpg {
-          //   background-position: center 1rem center;
-          // }
-          // &--dacor {
-          //   background-position: top 3rem center;
-          // }
+          &--bespoke {
+            background-position: right center;
+            background-size: 500% auto;
+          }
+          &--care {
+            background-position: right -50rem top;
+            background-size: 400% auto;
+          }
+          &--adstorm {
+            background-position: left -70rem top -18rem;
+            background-size: 600% auto;
+          }
+          &--ailife {
+            background-position: right -85rem top;
+            background-size: 580% auto;
+            filter: brightness(0.5) !important;
+          }
+          &--bao {
+            background-position: top -8rem center;
+            background-size: 600% auto;
+            filter: brightness(0.5) !important;
+          }
+          &--cpg {
+            background-position: center top -30rem;
+            background-size: 600% auto;
+          }
+          &--dacor {
+            background-position: top -40rem center;
+            background-size: 600% auto;
+          }
         }
         &-txt {
           display: flex;
@@ -672,66 +680,48 @@
           color: $colorfff;
           &__small {
             margin-top: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
           }
           &__tit {
             width: unset;
-            font-size: 4rem;
+            font-size: 3.4rem;
             line-height: 1.5;
           }
           &__desc {
             position: absolute;
             left: 0;
             top: 40%;
-            font-size: 4.5rem;
-            line-height: 1.3;
+            font-size: 4rem;
+            line-height: 1.5;
           }
           &__flag {
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            column-gap: 0.6rem;
+            display: block;
             position: absolute;
             bottom: 7rem;
-            left: 94.5rem;
-            font-size: 2rem;
-            font-weight: 500;
-            opacity: 0;
-            transition: opacity 0.3s $transEaseInOut;
+            left: 0rem;
+            opacity: 1;
+            transition: unset;
             .txt {
-              display: inline-block;
-              color: transparent;
-              font-weight: inherit;
-              font-size: inherit;
-              transform: translate3d(0, 50%, 0);
-              transition-property: transform, color;
-              transition-duration: 0.4s;
-              transition-timing-function: $transEaseInOut;
-              &:nth-child(2) {
-                transition-delay: 0.1s;
-              }
-              &:nth-child(3) {
-                transition-delay: 0.2s;
-              }
-              &:nth-child(4) {
-                transition-delay: 0.4s;
-              }
+              display: none;
+              color: $colorfff;
+              transform: translate3d(0, 0, 0);
               &.-arrow {
+                display: block;
                 position: relative;
                 width: 3.5rem;
                 height: 2.5rem;
-                transform: translate3d(-100%, 0, 0);
-                opacity: 0;
-                transition-property: transform, opacity;
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+                transition-property: unset;
                 svg {
                   position: absolute;
-                  left: 7%;
+                  left: 0;
                   top: 20%;
-                  width: 3rem;
+                  width: 3.5rem;
                 }
                 path {
-                  fill: transparent;
-                  stroke: transparent;
+                  fill: $colorfff;
+                  stroke: unset;
                 }
               }
             }
@@ -739,63 +729,65 @@
         }
       }
     }
-  
+
     .stack {
       padding: 5rem 0;
-      border-top: 1px solid $colore0e0e0;
       &__list {
-        @include autoSlider($quantity: 10, $duration: 30s);
+        @include autoSlider($width: 8rem, $height: 8rem, $paddingCol: 3rem, $fontSize:1.5rem, $quantity: 10, $duration: 30s);
         &--reverse {
-          @include autoSlider($quantity: 11, $duration: 35s, $reverse: true);
+          @include autoSlider($width: 8rem, $height: 8rem, $paddingCol: 3rem, $fontSize:1.5rem, $quantity: 11, $duration: 35s, $reverse: true);
         }
       }
     }
   
     .about {
-      margin-left: 9rem;
-      padding: 16rem 21rem;
-      border-top: 1px solid $colore0e0e0;
+      margin-left: 0;
+      padding: 8rem;
       &__tit {
-        font-weight: 600;
-        font-size: 3rem;
+        font-size: 2.6rem;
       }
       &__tit02 {
-        font-weight: 600;
-        font-size: 6rem;
-        line-height: 1;
+        font-size: 3.6rem;
+        line-height: 1.5;
       }
       &__copy {
-        margin-top: 6rem;
-        font-size: 5.4rem;
+        margin-top: 4rem;
+        font-size: 3.2rem;
         line-height: 1.3;
       }
       &__desc {
         margin-top: 2rem;
-        font-size: 3.6rem;
+        font-size: 2.6rem;
       }
       &__bottom {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: space-between;
         margin-top: 5rem;
         padding-top: 5rem;
-        border-top: 1px solid $colora3a3a3;
+        &-deployment {
+          display: flex;
+          column-gap: 3rem;
+          & + .about__bottom-deployment {
+            margin-top: 3rem;
+          }
+        }
         &__txt {
-          display: inline-block;
-          font-size: 2.4rem;
+          font-size: 2rem;
           & + .about__bottom__txt {
-            margin-left: 6rem;
+            margin-left: 0;
           }
         }
         .btn-round {
           &__inner {
-            @include btnRound {
-              font-size: 2rem;
+            @include btnRound ($paddingSide: 3rem, $height: 5.6rem, $arrRight: 1.5rem) {
+              font-size: 1.8rem;
             };
           }
           
           & + .btn-round {
-            margin-left: 3rem;
+            margin-left: 0;
           }
         }
         .btn-underline {

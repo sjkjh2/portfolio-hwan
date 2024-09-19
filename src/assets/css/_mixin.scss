@@ -69,7 +69,7 @@
     $height: 6rem, 
     $bdColor: $color000, 
     $bgColor: $colorfff, 
-    $arrSize: 1rem,
+    $arrSize: 0.5em,
     $arrRight: 1.7rem,
     $function: $transEaseInOut
   ) {
@@ -200,6 +200,7 @@
     $width: 16rem, 
     $height: 16rem, 
     $paddingCol: 5rem, 
+    $fontSize: 2rem,
     $quantity: null, 
     $duration: 20s, 
     $reverse: false
@@ -246,7 +247,7 @@
       background-color: $colorfff;
       color: $color333;
       font-weight: 600;
-      font-size: 2rem;
+      font-size: $fontSize;
       transition-property: transform, color;
       transition-duration: 0.3s;
       transition-timing-function: $transEaseInOut;
