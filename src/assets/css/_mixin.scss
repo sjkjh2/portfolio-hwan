@@ -235,7 +235,7 @@
       z-index: 1;
       transition-property: filter, transform;
       transition-duration: 0.3s, 0.5s;
-      transition-timing-function: $transEaseInOut;
+      transition-timing-function: $transBounce;
       backface-visibility: hidden;
     }
 
@@ -250,7 +250,7 @@
       font-size: $fontSize;
       transition-property: transform, color;
       transition-duration: 0.3s;
-      transition-timing-function: $transEaseInOut;
+      transition-timing-function: $transBounce;
       white-space: nowrap;
       
     }
