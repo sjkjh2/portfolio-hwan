@@ -533,51 +533,58 @@
 @media (max-width: $browserSizeMobile) { 
   .main {
     .visual {
-      height: 51.84rem;
+      height: 90rem;
       &__parallax {
         &--bg {
-          width: 180%;
+          width: 300%;
         }
         &--mountain01 {
           left: calc(50% + 40rem);
           top: calc(50% + 10rem);
+          width: 150%;
         }
         &--mountain02 {
           left: calc(50% - 15rem);
-          top: calc(50% + 10rem);
-          z-index: 3;
+          top: calc(50% + 20rem);
+          width: 80%;
         }
         &--mountain03 {
           left: calc(50% + 35rem);
           top: calc(50% + 5rem);
+          width: 80%;
         }
         &--txt {
-          top: calc(50% - 5rem);
+          top: calc(50% - 13rem);
         }
         &--mountain04 {
           left: calc(50% - 25rem);
-          top: calc(50% + 15rem);
+          top: calc(50% + 25rem);
+          width: 90%;
         }
         &--mountain05 {
           left: calc(50% - 8rem);
-          top: calc(50% + 15rem);
+          top: calc(50% + 25rem);
+          width: 85%;
         }
         &--mountain06 {
           left: calc(50% - 30rem);
-          top: calc(50% + 4rem);
+          top: calc(50% + 10rem);
+          width: 80%;
         }
         &--mountain07 {
           left: calc(50% + 20rem);
-          top: calc(50% + 12rem);
+          top: calc(50% + 32rem);
+          width: 100%;
         }
         &--fog01 {
           left: calc(50% + 30rem);
           top: calc(50% + 30rem);
+          width: 70%;
         }
         &--fog02 {
           left: calc(50% - 10rem);
           top: 50%;
-          width: 150%;
+          width: 300%;
         }
       }
       &__tit {
