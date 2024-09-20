@@ -25,6 +25,9 @@
   line-height: $lineHeight;
   text-align: $textAlign;
   @content;
+  span {
+    font-size: inherit;
+  }
 }
 
 @mixin background($repeat: no-repeat, $image: null, $position: left top, $size: 100% auto, $color: null) {
@@ -40,6 +43,9 @@
   font-size: $size;
   line-height: 1.4;
   @content;
+  li {
+    font-size: inherit;
+  }
 }
 
 @mixin flex($display: flex, $direction: row, $align: center, $justify: center) {
