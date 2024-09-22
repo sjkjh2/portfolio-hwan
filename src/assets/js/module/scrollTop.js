@@ -1,7 +1,7 @@
 import { addClass } from './utill';
 import { removeClass } from './utill';
 
-export function topButtonHandler() {
+export function scrollTop() {
   const scrollTopBtn = document.querySelector('.scroll-up');
 
   const checkScrollPosition = () => {
