@@ -46,7 +46,8 @@
           font-size: inherit;
         }
       }
-      &__desc {margin-top: 2rem;
+      &__desc {
+        margin-top: 2rem;
         font-size: 5rem;
         line-height: 1.4;
       }
@@ -76,10 +77,27 @@
     }
   }
 
-  .detail-img {
+  .detail {
+    position: relative;
     max-width: 1920px;
     margin: 0 auto;
-    background-color: red;
+
+    &__btn-box {
+      display: flex;
+      justify-content: center;
+      // text-align: center;
+      padding-bottom: 12rem;
+    }
+    &__btn {
+    }
+
+    .btn-round {
+      &__inner {
+        @include btnRound ($paddingSide: 5rem, $height: 7rem, $arrRight: 2rem) {
+          font-size: 2.5rem;
+        };
+      }
+    }
   }
 }
 
@@ -89,68 +107,73 @@
       height: 62.5rem;
   
       &__pos {
-        position: absolute;
-        top: 50%;
-        left: 30rem;
-        z-index: 1;
-        transform: translate(0, -50%);
+        left: 14rem;
   
         &__small {
-          display: block;
-          font-weight: 700;
           font-size: 2rem;
         }
         &__tit {
-          font-weight: 700;
-          font-size: 7rem;
+          font-size: 6rem;
         }
         &__data {
-          display: flex;
-          column-gap: 5rem;
-          margin-top: 10rem;
-          font-size: 2.5rem;
-          span {
-            font-size: inherit;
-          }
-          b {
-            font-weight: 500;
-            font-size: inherit;
-          }
+          column-gap: 3rem;
+          margin-top: 5rem;
+          font-size: 2.3rem;
         }
-        &__desc {margin-top: 2rem;
-          font-size: 5rem;
-          line-height: 1.4;
+        &__desc {
+          margin-top: 1.5rem;
+          font-size: 4rem;
+          line-height: 1.2;
         }
       }
-  
+
       &__img {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate3d(-50%, -50%, 0) scale(1);
-        width: 100%;
         height: unset;
         img {
           height: unset;
         }
       }
-  
-      &__mask {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7));
-        pointer-events: none;
-      }
     }
+  }
+}
+
+@media (max-width: $browserSizeMobile) {
+  .main {
+    .visual {
+      height: 90rem;
   
-    .detail-img {
-      max-width: 1920px;
-      margin: 0 auto;
-      background-color: red;
+      &__pos {
+        left: 8rem;
+  
+        &__small {
+          font-size: 2rem;
+        }
+        &__tit {
+          font-size: 4rem;
+        }
+        &__data {
+          column-gap: 3rem;
+          margin-top: 5rem;
+          font-size: 2.3rem;
+        }
+        &__desc {
+          margin-top: 1.5rem;
+          font-size: 3rem;
+          line-height: 1.2;
+        }
+      }
+
+      &__img {
+        height: 100%;
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          max-width: unset;
+          height: 100%;
+        }
+      }
     }
   }
 }

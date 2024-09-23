@@ -236,36 +236,34 @@
         top: 0;
         width: 100%;
         height: 100%;
-        @include background($size: cover);
+        @include background($size: cover, $position: center);
         transform: scale(1.5);
         transition-property: transform, filter;
         transition-duration: 1s, 2s;
         &--bespoke {
-          background-position: top -8rem center;
           background-image: url("../images/bg_projects_bespoke.jpg");
         }
         &--care {
-          background-position: top -11rem center;
+          background-position: top -18rem center;
           background-image: url("../images/bg_projects_care.jpg");
         }
         &--adstorm {
           background-position: top -5rem center;
           background-image: url("../images/bg_projects_adstorm.jpg");
         }
-        &--ailife {
-          background-position: top center;
-          background-image: url("../images/bg_projects_ailife.jpg");
-        }
-        &--bao {
-          background-position: top center;
-          background-image: url("../images/bg_projects_bao.jpg");
-        }
+        // &--ailife {
+        //   // background-position: top center;
+        //   background-image: url("../images/bg_projects_ailife.jpg");
+        // }
+        // &--bao {
+        //   // background-position: top center;
+        //   background-image: url("../images/bg_projects_bao.jpg");
+        // }
         &--cpg {
-          background-position: center 1rem center;
+          background-position: top center;
           background-image: url("../images/bg_projects_cpg.jpg");
         }
         &--dacor {
-          background-position: top 3rem center;
           background-image: url("../images/bg_projects_dacor.jpg");
         }
         // &::before {
@@ -644,39 +642,25 @@
           display: none;
         }
         &__bg {
-          @include background($size: cover);
+          @include background($size: 300% auto, $position: center);
           transform: none;
           transition-property: unset;
-          &--bespoke {
-            background-position: right center;
-            background-size: 500% auto;
-          }
           &--care {
-            background-position: right -50rem top;
-            background-size: 400% auto;
+            background-position: left -15rem center;
           }
           &--adstorm {
-            background-position: left -70rem top -18rem;
-            background-size: 600% auto;
+            background-position: left top;
           }
-          &--ailife {
-            background-position: right -85rem top;
-            background-size: 580% auto;
-            filter: brightness(0.5) !important;
-          }
-          &--bao {
-            background-position: top -8rem center;
-            background-size: 600% auto;
-            filter: brightness(0.5) !important;
-          }
-          &--cpg {
-            background-position: center top -30rem;
-            background-size: 600% auto;
-          }
-          &--dacor {
-            background-position: top -40rem center;
-            background-size: 600% auto;
-          }
+          // &--ailife {
+          //   background-position: right -85rem top;
+          //   background-size: 580% auto;
+          //   filter: brightness(0.5) !important;
+          // }
+          // &--bao {
+          //   background-position: top -8rem center;
+          //   background-size: 600% auto;
+          //   filter: brightness(0.5) !important;
+          // }
         }
         &-txt {
           display: flex;
