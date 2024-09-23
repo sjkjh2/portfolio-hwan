@@ -39,6 +39,20 @@ html, body, body * {
   word-break: keep-all;
 }
 
+body.-has-popup {
+  overflow-y: hidden;
+}
+
+.offscreen {
+  overflow: hidden;
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  margin: -1px; 
+  -webkit-clip-path:polygon(0 0, 0 0, 0 0); 
+  clip-path:polygon(0 0, 0 0, 0 0);
+}
+
 .br-pc {
   display: block;
 }
