@@ -35,13 +35,3 @@ export function refresh() {
   })
 }
 
-export function detectDeviceType() {
-  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  
-  // if (isTouch && isMobile) {
-  //   return 'Mobile/Tablet';
-  // } else {
-  //   return 'PC';
-  // }
-}

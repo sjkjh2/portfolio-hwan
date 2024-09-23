@@ -15,6 +15,7 @@
     overflow: hidden;
     position: relative;
     height: 108rem;
+    max-height: 100vh;
     &__parallax {
       position: absolute;
       max-width: unset;
@@ -90,6 +91,46 @@
         top: 50%;
         width: 140%;
         z-index: 11;
+      }
+    }
+    &__more {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      padding-bottom: 10rem;
+      color: $colorfff;
+      font-size: 2rem;
+      z-index: 200;
+      &-txt {
+        display: block;
+        font-size: inherit;
+        text-align: center;
+        &--info {
+          font-size: 2rem;
+        }
+      }
+      &-bar {
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 1px;
+        height: 8rem;
+        background-color: $colora3a3a3;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: $colorfff;
+          animation-name: more;
+          animation-duration: 1.5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: $transEaseInOut;
+        }
       }
     }
     &__mask {

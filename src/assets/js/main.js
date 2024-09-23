@@ -18,6 +18,7 @@ mainVisualHandler();
 mouseHoverHandler();
 
 projectsHandler();
+detectDeviceType();
 
 function projectsHandler() {
   const projectsWrap = document.querySelector('.projects');
@@ -43,6 +44,20 @@ function projectsHandler() {
   projectsWrap.addEventListener('mouseout', (event) => {
     linkHover(event, 'mouseout');
   });
+}
+
+function detectDeviceType() {
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const visualInfo = document.querySelector('.visual__more-txt--info');
+  
+  if (isTouch && isMobile) {
+    visualInfo.innerHTML = '화면을 터치해 보세요';
+    // return 'Mobile/Tablet';
+  } else {
+    // return 'PC';
+    visualInfo.innerHTML = '마우스를 움직여 보세요';
+  }
 }
 
 // const mouse = new Mouse();

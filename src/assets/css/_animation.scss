@@ -90,3 +90,12 @@
     transform: translate3d(-50%, -50%, 0);
   }
 }
+
+@keyframes more {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
