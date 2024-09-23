@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비스포크 인피니트 라인 | 디테일 | 김재환 웹 포트폴리오</title>
+  <script type="module" crossorigin src="/assets/js/modulepreload-polyfill.js"></script>
+  <script type="module" crossorigin src="/assets/js/ScrollTrigger.js"></script>
+  <script type="module" crossorigin src="/assets/js/gsapAnimation.js"></script>
+  <script type="module" crossorigin src="/assets/js/detail.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/styles/detail.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <h2 class="offscreen">네비게이션 메뉴</h2>    
+      <a href="/" class="header-logo" aria-label="김재환 웹 포트폴리오">
+        <svg viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="header-logo__path" d="M7.22403 10.32V5.48398L2.79602 6.69598V10.32H0.900024V0.875977H2.79602V5.25598L7.22403 4.04398V0.875977H9.12003V10.32H7.22403Z" fill="white"/>
+        </svg>
+      </a>
+      <div class="header-scroll"></div>
+      <button type="button" id="gnbList" class="header-menu__open" aria-label="메뉴 열기" aria-haspopup="menu" aria-expanded="false">
+        <span class="bar top"></span>
+        <span class="bar middle"></span>
+        <span class="bar bottom"></span>
+      </button>
+      <div class="header-menu">
+        <div class="header-menu__bg">
+          <div class="header-menu__pic header-menu__pic--bespoke"></div>
+          <div class="header-menu__pic header-menu__pic--care"></div>
+          <div class="header-menu__pic header-menu__pic--adstorm"></div>
+          <!-- <div class="header-menu__pic header-menu__pic--ailife"></div> -->
+          <!-- <div class="header-menu__pic header-menu__pic--bao"></div> -->
+          <div class="header-menu__pic header-menu__pic--cpg"></div>
+          <div class="header-menu__pic header-menu__pic--dacor"></div>
+        </div>
+        <h3 class="header-menu__tit"><span>Projects</span></h3>
+        <nav aria-labelledby="gnbList">
+          <ul class="header-menu__list" role="menu">
+            <li class="header-menu__item" role="menuitem">
+              <a href="/detail/bespoke.html" class="header-menu__link">
+                <span class="header-menu__txt">BESPOKE infinite Line</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/detail/care.html" class="header-menu__link">
+                <span class="header-menu__txt">삼성케어플러스</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/detail/adstorm.html" class="header-menu__link">
+                <span class="header-menu__txt">ADSTORM</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <!-- <li class="header-menu__item" role="menuitem">
+              <a href="" class="header-menu__link">
+                <span class="header-menu__txt">새로운 시작 AI 라이프</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/samsung_bespoke/index.html" class="header-menu__link">
+                <span class="header-menu__txt">Bao Family loves Flip</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li> -->
+            <li class="header-menu__item" role="menuitem">
+              <a href="/detail/cpg.html" class="header-menu__link">
+                <span class="header-menu__txt">삼성닷컴 CPG</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+            <li class="header-menu__item" role="menuitem">
+              <a href="/detail/dacor.html" class="header-menu__link">
+                <span class="header-menu__txt">Dacor</span> <span class="offscreen">페이지 이동</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-menu__bottom">
+          <div class="header-menu__bottom-deployment">
+            <a href="tel:010-8694-0221" class="header-menu__bottom__txt btn-underline">TEL: 010-8694-0221 <span class="btn-underline__bar"></span></a>
+            <button class="header-menu__bottom__txt btn-underline -copy-text" type="button" data-element-id="textCopyHeader">MAIL: sjkjh2@nate.com <span class="btn-underline__bar"></span></button>
+            <input id="textCopyHeader" class="offscreen" type="text" value="sjkjh2@nate.com" tabindex="-1">
+          </div>
+          <div class="header-menu__bottom-deployment">
+            <a href="" class="header-menu__bottom__txt btn-round">
+              <div class="btn-round__inner">이력서 내려받기</div>
+            </a>
+          </div>
+        </div>
+    
+        <button type="button" class="header-menu__closed" aria-label="메뉴 닫기">
+          <span class="header-menu__closed-inner">
+            <span class="bar row"></span>
+            <span class="bar col"></span>
+          </span>
+        </button>
+      </div>
+    </header>    <!-- header.html -->
+
+    <main class="main">
+      <h1 class="offscreen">프로젝트 디테일</h1>
+      <section class="visual">
+        <div class="visual__pos">
+          <span class="visual__pos__small -scrollMotion -topToBottom">New Projects</span>
+          <h2 class="visual__pos__tit -scrollMotion">BESPOKE infinite Line</h2>
+          <div class="visual__pos__data -scrollMotion">
+            <span class="visual__pos__data-txt"><b>Date.</b> 2022.07</span>
+            <span class="visual__pos__data-txt"><b>Brand.</b> SAMSUNG</span>
+          </div>
+          <p class="visual__pos__desc -scrollMotion">
+            비스포크 인피니트 라인 <br>홍보 페이지 제작
+          </p>
+        </div>
+        <div class="visual__img">
+          <img src="/assets/images/bg_projects_bespoke.jpg" alt="">
+        </div>
+        <div class="visual__mask"></div>
+      </section>
+      <section class="detail">
+        <h2 class="offscreen">프로젝트 디테일 이미지</h2>
+        <picture class="detail__img">
+          <source media="(max-width: 768px)" srcset="/assets/images/detail_bespoke_m.jpg">
+          <img src="/assets/images/detail_bespoke.jpg" alt="">
+        </picture>
+        <div class="detail__btn-box">
+          <a href="/projects/bespoke/index.html" class="detail__btn btn-round -scrollMotion -topToBottom" target="_blank">
+            <div class="btn-round__inner">사이트 방문하기 <span class="offscreen">새창 열림</span></div>
+          </a>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <span class="footer__copy">ⓒ 2024, Kim Jae Hwan. All Rights Reserved</span>
+    </footer>    <!-- footer.html -->
+    
+    <div class="scroll-up">
+      <button type="button" class="scroll-up__btn"><span class="offscreen">상단으로 이동</span></button>
+    </div>    <!-- scrollTop.html -->
+  </div>
+</body>
+</html>

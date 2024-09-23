@@ -3,23 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>김재환 포트폴리오</title>
+  <title>김재환 웹 포트폴리오</title>
   <script type="module" crossorigin src="/assets/js/main.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/js/modulepreload-polyfill.js">
   <link rel="modulepreload" crossorigin href="/assets/js/ScrollTrigger.js">
+  <link rel="modulepreload" crossorigin href="/assets/js/gsapAnimation.js">
   <link rel="stylesheet" crossorigin href="/assets/styles/main.css">
 </head>
 <body>
   <div class="wrap">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-    </head>
-    <body>
-    
     <header class="header">
       <h2 class="offscreen">네비게이션 메뉴</h2>    
       <a href="/" class="header-logo" aria-label="김재환 웹 포트폴리오">
@@ -38,8 +30,8 @@
           <div class="header-menu__pic header-menu__pic--bespoke"></div>
           <div class="header-menu__pic header-menu__pic--care"></div>
           <div class="header-menu__pic header-menu__pic--adstorm"></div>
-          <div class="header-menu__pic header-menu__pic--ailife"></div>
-          <div class="header-menu__pic header-menu__pic--bao"></div>
+          <!-- <div class="header-menu__pic header-menu__pic--ailife"></div> -->
+          <!-- <div class="header-menu__pic header-menu__pic--bao"></div> -->
           <div class="header-menu__pic header-menu__pic--cpg"></div>
           <div class="header-menu__pic header-menu__pic--dacor"></div>
         </div>
@@ -47,17 +39,17 @@
         <nav aria-labelledby="gnbList">
           <ul class="header-menu__list" role="menu">
             <li class="header-menu__item" role="menuitem">
-              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">
-                <span class="header-menu__txt">삼성비스포크</span> <span class="offscreen">페이지 이동</span>
+              <a href="/detail/bespoke.html" class="header-menu__link">
+                <span class="header-menu__txt">BESPOKE infinite Line</span> <span class="offscreen">페이지 이동</span>
               </a>
             </li>
             <li class="header-menu__item" role="menuitem">
-              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">
+              <a href="/detail/care.html" class="header-menu__link">
                 <span class="header-menu__txt">삼성케어플러스</span> <span class="offscreen">페이지 이동</span>
               </a>
             </li>
             <li class="header-menu__item" role="menuitem">
-              <a href="" class="header-menu__link">
+              <a href="/detail/adstorm.html" class="header-menu__link">
                 <span class="header-menu__txt">ADSTORM</span> <span class="offscreen">페이지 이동</span>
               </a>
             </li>
@@ -67,17 +59,17 @@
               </a>
             </li>
             <li class="header-menu__item" role="menuitem">
-              <a href="/projects/samsung_bespoke/index.html" class="header-menu__link">
+              <a href="/samsung_bespoke/index.html" class="header-menu__link">
                 <span class="header-menu__txt">Bao Family loves Flip</span> <span class="offscreen">페이지 이동</span>
               </a>
             </li> -->
             <li class="header-menu__item" role="menuitem">
-              <a href="" class="header-menu__link">
+              <a href="/detail/cpg.html" class="header-menu__link">
                 <span class="header-menu__txt">삼성닷컴 CPG</span> <span class="offscreen">페이지 이동</span>
               </a>
             </li>
             <li class="header-menu__item" role="menuitem">
-              <a href="" class="header-menu__link">
+              <a href="/detail/dacor.html" class="header-menu__link">
                 <span class="header-menu__txt">Dacor</span> <span class="offscreen">페이지 이동</span>
               </a>
             </li>
@@ -91,10 +83,7 @@
           </div>
           <div class="header-menu__bottom-deployment">
             <a href="" class="header-menu__bottom__txt btn-round">
-              <div class="btn-round__inner">잡코리아 이력서 <span class="offscreen">페이지 이동</span></div>
-            </a>
-            <a href="" class="header-menu__bottom__txt btn-round">
-              <div class="btn-round__inner">사람인 이력서 <span class="offscreen">페이지 이동</span></div>
+              <div class="btn-round__inner">이력서 내려받기</div>
             </a>
           </div>
         </div>
@@ -106,11 +95,7 @@
           </span>
         </button>
       </div>
-    </header>
-    
-    
-    </body>
-    </html>    <!-- header.html -->
+    </header>    <!-- header.html -->
     
     <main class="main">
       <h1 class="offscreen">홈</h1>
@@ -118,8 +103,7 @@
         <img src="/assets/images/bg_visual.jpg" alt="" class="visual__parallax visual__parallax--bg" data-speedx="0.2" data-speedy="0.2" data-speedz="0.2" data-rotation="0.2">
         <img src="/assets/images/bg_visual_mountain01.png" alt="" class="visual__parallax visual__parallax--mountain01" data-speedx="0.18" data-speedy="0.18" data-speedz="0.5" data-rotation="0.4" data-distance="850">
         <img src="/assets/images/bg_visual_mountain02.png" alt="" class="visual__parallax visual__parallax--mountain02" data-speedx="0.15" data-speedy="0.15" data-speedz="0.6" data-rotation="0.5" data-distance="1100">
-        <img src="/assets/images/bg_visual_mountain03.png" alt="" class="visual__parallax visual__parallax--mountain03" data-speedx="0.13" data-speedy="0.13" data-speedz="0.1" data-rotation="0.1" data-distance="1400">
-        <img src="/assets/images/bg_visual_mountain04.png" alt="" class="visual__parallax visual__parallax--mountain04" data-speedx="0.1" data-speedy="0.1" data-speedz="0.3" data-rotation="0.3" data-distance="1700">
+        <img src="/assets/images/bg_visual_mountain04.png" alt="" class="visual__parallax visual__parallax--mountain04" data-speedx="0.13" data-speedy="0.13" data-speedz="0.1" data-rotation="0.1" data-distance="1400">
         <div class="visual__parallax visual__parallax--txt" data-speedx="0.08" data-speedy="0.08" data-speedz="0.2" data-rotation="0.2">
           <h2 class="visual__tit">김재환 웹 포트폴리오</h2>
           <div class="visual__logo">
@@ -131,7 +115,8 @@
             </svg>
           </div>
         </div>
-        <img src="/assets/images/bg_visual_mountain05.png" alt="" class="visual__parallax visual__parallax--mountain05" data-speedx="0.06" data-speedy="0.06" data-speedz="0.2" data-rotation="0.2" data-distance="1900">
+        <img src="/assets/images/bg_visual_mountain05.png" alt="" class="visual__parallax visual__parallax--mountain05" data-speedx="0.1" data-speedy="0.1" data-speedz="0.3" data-rotation="0.3" data-distance="1700">
+        <img src="/assets/images/bg_visual_mountain03.png" alt="" class="visual__parallax visual__parallax--mountain03" data-speedx="0.06" data-speedy="0.06" data-speedz="0.2" data-rotation="0.2" data-distance="1900">
         <img src="/assets/images/bg_visual_mountain06.png" alt="" class="visual__parallax visual__parallax--mountain06" data-speedx="0.04" data-speedy="0.04" data-speedz="0.2" data-rotation="0.2" data-distance="2000">
         <img src="/assets/images/bg_visual_mountain07.png" alt="" class="visual__parallax visual__parallax--mountain07" data-speedx="0.02" data-speedy="0.02" data-speedz="0.2" data-rotation="0.1" data-distance="2300">
         <img src="/assets/images/bg_visual_fog01.png" alt="" class="visual__parallax visual__parallax--fog01" data-speedx="0.2" data-speedy="0.2" data-speedz="0.2" data-rotation="0.2" data-distance="2400">
@@ -145,7 +130,7 @@
         </div>
         <ul id="projectsList" class="projects__list">
           <li class="projects__item">
-            <a href="./projects/samsung_bespoke/index.html" class="projects__link">
+            <a href="./detail/bespoke.html" class="projects__link">
               <span class="projects__link__tilt -top-left"></span>
               <span class="projects__link__tilt -top-right"></span>
               <span class="projects__link__tilt -btm-left"></span>
@@ -155,9 +140,9 @@
               <div class="projects__link-txt">
                 <div class="projects__link-txt__inner">
                   <span class="projects__link-txt__small -scrollMotion -topToBottom" data-delay="0.3">New Project</span>
-                  <h3 class="projects__link-txt__tit -scrollMotion">삼성비스포크</h3>
+                  <h3 class="projects__link-txt__tit -scrollMotion">BESPOKE infinite Line</h3>
                 </div>
-                <p class="projects__link-txt__desc -scrollMotion" data-delay="0.2">삼성비스포크 제품 <br>홍보 페이지 제작</p>
+                <p class="projects__link-txt__desc -scrollMotion" data-delay="0.2">비스포크 인피니트 라인 <br>홍보 페이지 제작</p>
                 <div class="projects__link-txt__flag">
                   <span class="txt">See</span>
                   <span class="txt">case</span>
@@ -170,7 +155,7 @@
             </a>
           </li>
           <li class="projects__item">
-            <a href="./projects/samsung_care/index.html" class="projects__link">
+            <a href="./detail/care.html" class="projects__link">
               <span class="projects__link__tilt -top-left"></span>
               <span class="projects__link__tilt -top-right"></span>
               <span class="projects__link__tilt -btm-left"></span>
@@ -195,7 +180,7 @@
             </a>
           </li>
           <li class="projects__item">
-            <a href="" class="projects__link">
+            <a href="./detail/adstorm.html" class="projects__link">
               <span class="projects__link__tilt -top-left"></span>
               <span class="projects__link__tilt -top-right"></span>
               <span class="projects__link__tilt -btm-left"></span>
@@ -270,7 +255,7 @@
             </a>    
           </li> -->
           <li class="projects__item">
-            <a href="" class="projects__link">
+            <a href="./detail/cpg.html" class="projects__link">
               <span class="projects__link__tilt -top-left"></span>
               <span class="projects__link__tilt -top-right"></span>
               <span class="projects__link__tilt -btm-left"></span>
@@ -295,7 +280,7 @@
             </a>    
           </li>
           <li class="projects__item">
-            <a href="https://www.dacorkorea.com/" class="projects__link" rel="noopener noreferrer">
+            <a href="./detail/dacor.html" class="projects__link" rel="noopener noreferrer">
               <span class="projects__link__tilt -top-left"></span>
               <span class="projects__link__tilt -top-right"></span>
               <span class="projects__link__tilt -btm-left"></span>
@@ -432,10 +417,7 @@
           </div>
           <div class="about__bottom-deployment">
             <a href="" class="about__bottom__txt btn-round -scrollMotion -topToBottom" data-delay="0.4">
-              <div class="btn-round__inner">사람인 이력서 <span class="offscreen">페이지 이동</span></div>
-            </a>
-            <a href="" class="about__bottom__txt btn-round -scrollMotion -topToBottom" data-delay="0.6">
-              <div class="btn-round__inner">잡코리아 이력서 <span class="offscreen">페이지 이동</span></div>
+              <div class="btn-round__inner">이력서 내려받기</div>
             </a>
           </div>
         </div>
@@ -448,9 +430,7 @@
 
     <div class="scroll-up">
       <button type="button" class="scroll-up__btn"><span class="offscreen">상단으로 이동</span></button>
-    </div>
+    </div>    <!-- scrollTop.html -->
   </div>
-  
-  
 </body>
 </html>

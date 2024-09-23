@@ -16,8 +16,13 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'src/index.html'),
-          projects01: path.resolve(__dirname, 'src/projects/samsung_bespoke/index.html'),
-          projects02: path.resolve(__dirname, 'src/projects/samsung_care/index.html'),
+          projects01: path.resolve(__dirname, 'src/projects/bespoke/index.html'),
+          projects02: path.resolve(__dirname, 'src/projects/care/index.html'),
+          detail01: path.resolve(__dirname, 'src/detail/bespoke.html'),
+          detail02: path.resolve(__dirname, 'src/detail/care.html'),
+          detail03: path.resolve(__dirname, 'src/detail/adstorm.html'),
+          detail04: path.resolve(__dirname, 'src/detail/cpg.html'),
+          detail05: path.resolve(__dirname, 'src/detail/dacor.html'),
         },
         output: {
           assetFileNames: (assetInfo) => {
