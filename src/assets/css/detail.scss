@@ -60,7 +60,7 @@
       left: 50%;
       top: 50%;
       transform: translate3d(-50%, -50%, 0) scale(1);
-      width: 100%;
+      width: 101%;
       height: 100%;
       img {
         height: 100%;
@@ -87,10 +87,7 @@
     &__btn-box {
       display: flex;
       justify-content: center;
-      // text-align: center;
       padding-bottom: 12rem;
-    }
-    &__btn {
     }
 
     .btn-round {
