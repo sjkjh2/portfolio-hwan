@@ -4,9 +4,12 @@ import handlebars from 'vite-plugin-handlebars';
 import path from 'node:path';
 
 export default defineConfig(() => {
+  const isTest = false;
+  const baseRoot = isTest ? '/hwan/' : '/';
 
   return {
     root: path.resolve(__dirname, 'src'),
+    base: baseRoot,
     build: {
       outDir: '../dist',
       emptyOutDir: true,
@@ -64,6 +67,9 @@ export default defineConfig(() => {
       }),
       handlebars({
         partialDirectory: path.resolve(__dirname, './src/partials'),
+        helpers: {
+          rootSrc: baseRoot
+        }
       }),
     ],
   }
