@@ -21,6 +21,9 @@ export function gsapScrollHandler() {
 
     if (el.classList.contains('-topToBottom')) {
       y = -50;
+    } if (el.classList.contains('visual__pos')) {
+      duration = 2;
+      y = 0;
     } else {
       y = 100;
     }

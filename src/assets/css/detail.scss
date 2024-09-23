@@ -19,10 +19,10 @@
 
     &__pos {
       position: absolute;
-      top: 50%;
+      top: 25%;
       left: 25rem;
       z-index: 1;
-      transform: translate(0, -50%);
+      // transform: translate(0, -50%);
       padding: 5rem;
       background-color: rgba(0, 0, 0, 0.8);
 
