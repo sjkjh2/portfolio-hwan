@@ -48,6 +48,7 @@ export function menuHandler() {
     }
   
     function headerProgress() {
+      const scrollY = window.scrollY;
       const scrollPer = scrollY / maxScrollValue;
   
       if (windowInnerWidth > 1200) {

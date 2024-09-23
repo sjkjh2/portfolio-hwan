@@ -1,1 +1,156 @@
 @import "_common";
+
+.wrap {
+  position: relative;
+}
+
+.main {
+  position: relative;
+  &.-has-popup {
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .visual {
+    overflow: hidden;
+    position: relative;
+    height: 108rem;
+    color: $colorfff;
+
+    &__pos {
+      position: absolute;
+      top: 50%;
+      left: 30rem;
+      z-index: 1;
+      transform: translate(0, -50%);
+
+      &__small {
+        display: block;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+      &__tit {
+        font-weight: 700;
+        font-size: 7rem;
+      }
+      &__data {
+        display: flex;
+        column-gap: 5rem;
+        margin-top: 10rem;
+        font-size: 2.5rem;
+        span {
+          font-size: inherit;
+        }
+        b {
+          font-weight: 500;
+          font-size: inherit;
+        }
+      }
+      &__desc {margin-top: 2rem;
+        font-size: 5rem;
+        line-height: 1.4;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0) scale(1);
+      width: 100%;
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+
+    &__mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7));
+      pointer-events: none;
+    }
+  }
+
+  .detail-img {
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: red;
+  }
+}
+
+@media (max-width: $browserSizeTablet) {
+  .main {
+    .visual {
+      height: 62.5rem;
+  
+      &__pos {
+        position: absolute;
+        top: 50%;
+        left: 30rem;
+        z-index: 1;
+        transform: translate(0, -50%);
+  
+        &__small {
+          display: block;
+          font-weight: 700;
+          font-size: 2rem;
+        }
+        &__tit {
+          font-weight: 700;
+          font-size: 7rem;
+        }
+        &__data {
+          display: flex;
+          column-gap: 5rem;
+          margin-top: 10rem;
+          font-size: 2.5rem;
+          span {
+            font-size: inherit;
+          }
+          b {
+            font-weight: 500;
+            font-size: inherit;
+          }
+        }
+        &__desc {margin-top: 2rem;
+          font-size: 5rem;
+          line-height: 1.4;
+        }
+      }
+  
+      &__img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1);
+        width: 100%;
+        height: unset;
+        img {
+          height: unset;
+        }
+      }
+  
+      &__mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7));
+        pointer-events: none;
+      }
+    }
+  
+    .detail-img {
+      max-width: 1920px;
+      margin: 0 auto;
+      background-color: red;
+    }
+  }
+}

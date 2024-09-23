@@ -5,6 +5,7 @@ export function scrollTop() {
   const scrollTopBtn = document.querySelector('.scroll-up');
 
   const checkScrollPosition = () => {
+    const scrollY = window.scrollY;
     const documentHeight = document.documentElement.scrollHeight;
     const currentScroll = window.scrollY + window.innerHeight;
 
