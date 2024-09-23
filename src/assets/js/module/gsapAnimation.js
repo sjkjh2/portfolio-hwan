@@ -2,7 +2,6 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { addClass } from './utill';
 import { removeClass } from './utill';
-import { detectDeviceType } from './utill';
 
 export function gsapScrollHandler() {
   gsap.registerPlugin(ScrollTrigger);

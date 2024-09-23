@@ -55,8 +55,8 @@ function detectDeviceType() {
     visualInfo.innerHTML = '화면을 터치해 보세요';
     // return 'Mobile/Tablet';
   } else {
-    // return 'PC';
     visualInfo.innerHTML = '마우스를 움직여 보세요';
+    // return 'PC';
   }
 }
 
