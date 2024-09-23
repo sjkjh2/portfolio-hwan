@@ -20,9 +20,11 @@
     &__pos {
       position: absolute;
       top: 50%;
-      left: 30rem;
+      left: 25rem;
       z-index: 1;
       transform: translate(0, -50%);
+      padding: 5rem;
+      background-color: rgba(0, 0, 0, 0.8);
 
       &__small {
         display: block;
@@ -107,7 +109,7 @@
       height: 62.5rem;
   
       &__pos {
-        left: 14rem;
+        left: 9rem;
   
         &__small {
           font-size: 2rem;
@@ -143,7 +145,7 @@
       height: 90rem;
   
       &__pos {
-        left: 8rem;
+        left: 3rem;
   
         &__small {
           font-size: 2rem;
