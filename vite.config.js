@@ -17,6 +17,7 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'src/index.html'),
+          test: path.resolve(__dirname, 'src/test.html'),
           projects01: path.resolve(__dirname, 'src/projects/bespoke/index.html'),
           projects02: path.resolve(__dirname, 'src/projects/care/index.html'),
           detail01: path.resolve(__dirname, 'src/detail/bespoke.html'),
