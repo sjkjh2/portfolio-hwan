@@ -519,9 +519,9 @@
   .stack {
     padding: 3rem 0;
     &__list {
-      @include autoSlider($width: 10rem, $height: 10rem, $paddingCol: 3rem, $quantity: 10, $duration: 30s);
+      @include autoSlider($width: 8rem, $height: 8rem, $paddingCol: 3rem, $quantity: 10, $duration: 30s);
       &--reverse {
-        @include autoSlider($width: 10rem, $height: 10rem, $paddingCol: 3rem, $quantity: 11, $duration: 35s, $reverse: true);
+        @include autoSlider($width: 8rem, $height: 8rem, $paddingCol: 3rem, $quantity: 11, $duration: 35s, $reverse: true);
       }
     }
   }

@@ -197,12 +197,12 @@
 }
 
 @mixin autoSlider(
-    $width: 16rem, 
-    $height: 16rem, 
+    $width: 12rem, 
+    $height: 12rem, 
     $paddingCol: 5rem, 
     $fontSize: 2rem,
     $quantity: null, 
-    $duration: 20s, 
+    $duration, 
     $reverse: false
   ) {
   overflow: hidden;
