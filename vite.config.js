@@ -13,7 +13,6 @@ export default defineConfig(() => {
     build: {
       outDir: '../dist',
       emptyOutDir: true,
-      assetsInclude: ['**/*.jpg', '**/*.png'],
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'src/index.html'),
