@@ -445,11 +445,7 @@
       }
     }
     .btn-round {
-      &__inner {
-        @include btnRound {
-          font-size: 2rem;
-        };
-      }
+      @include btnRound($fontSize: 2rem);
       
       & + .btn-round {
         margin-left: 3rem;
@@ -553,11 +549,7 @@
         }
       }
       .btn-round {
-        &__inner {
-          @include btnRound {
-            font-size: 1.8rem;
-          };
-        }
+        @include btnRound($fontSize: 1.8rem);
         
         & + .btn-round {
           margin-left: 2.5rem;
@@ -809,11 +801,7 @@
         }
       }
       .btn-round {
-        &__inner {
-          @include btnRound ($paddingSide: 3rem, $height: 5.6rem, $arrRight: 1.5rem) {
-            font-size: 1.8rem;
-          };
-        }
+        @include btnRound ($paddingSide: 3rem, $height: 5.6rem, $arrRight: 1.5rem);
         
         & + .btn-round {
           margin-left: 0;

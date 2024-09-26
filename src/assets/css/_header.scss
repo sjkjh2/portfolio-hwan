@@ -305,12 +305,7 @@
         }
       }
       .btn-round {
-        &__inner {
-          @include btnRound($bdColor: $colorfff) {
-            font-size: 2rem;
-          };
-        }
-        
+        @include btnRound($bdColor: $colorfff, $fontSize: 2rem);
         & + .btn-round {
           margin-left: 3rem;
         }
@@ -580,11 +575,7 @@
           }
         }
         .btn-round {
-          &__inner {
-            @include btnRound($bdColor: $colorfff) {
-              font-size: 1.8rem;
-            };
-          }
+          @include btnRound($bdColor: $colorfff, $fontSize: 1.8rem);
           
           & + .btn-round {
             margin-left: 2.5rem;
@@ -643,26 +634,15 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        align-items: flex-end;
         transform: translate(-50%, calc(-50% + 20rem));
         &-deployment {
           margin-top: 3rem;
           padding: 1.5rem 0;
         }
         &__txt {
-          font-size: 2rem;
           & + .header-menu__bottom__txt {
             margin-left: 4rem;
-          }
-        }
-        .btn-round {
-          &__inner {
-            @include btnRound($bdColor: $colorfff) {
-              font-size: 1.8rem;
-            };
-          }
-          
-          & + .btn-round {
-            margin-left: 2.5rem;
           }
         }
       }

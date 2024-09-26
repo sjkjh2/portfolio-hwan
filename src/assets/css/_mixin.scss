@@ -71,67 +71,81 @@
     $bgColor: $colorfff, 
     $arrSize: 0.5em,
     $arrRight: 1.7rem,
-    $function: $transEaseInOut
+    $function: $transEaseInOut,
+    $fontSize: null
   ) {
-  display: $display;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0 $paddingSide;
-  height: $height;
-  border-radius: 4rem;
-  transition: padding 0.3s $function;
-  
   @content;
 
-  &::before, 
-  &::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    transition-timing-function: $function;
+  .btn-round__inner {
+    display: $display;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 $paddingSide;
+    height: $height;
+    border-radius: 4rem;
+    font-size: $fontSize;
+
+    &::before, 
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transition-timing-function: $function;
+    }
+
+    &::before {
+      right: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 4rem;
+      border: 1px solid $bdColor;
+      transition-property: width, height, background-color;
+      transition-duration: 0.3s;
+      transition-delay: 0s, 0s, 0.1s;
+      
+    }
+    &::after {
+      right: $arrRight;
+      transform: translate3d(-100%, -50%, 0) rotate(45deg);
+      width: $arrSize;
+      height: $arrSize;
+      border-top: 2px solid $colorfff;
+      border-right: 2px solid $colorfff;
+      opacity: 0;
+      transition-property: transform, opacity;
+      transition-duration: 0.2s;
+      transition-delay: 0.2s;
+    }
   }
 
-  &::before {
-    right: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 100%;
-    border-radius: 4rem;
-    border: 1px solid $bdColor;
-    transition-property: width, height, background-color;
-    transition-duration: 0.3s;
-    transition-delay: 0s, 0s, 0.1s;
-    
+  .btn-round__txt {
+    font-size: $fontSize;
+    transition: transform 0.2s $transEaseInOut;
   }
-  &::after {
-    right: $arrRight;
-    transform: translate3d(-100%, -50%, 0) rotate(45deg);
-    width: $arrSize;
-    height: $arrSize;
-    border-top: 2px solid $colorfff;
-    border-right: 2px solid $colorfff;
-    opacity: 0;
-    transition-property: transform, opacity;
-    transition-duration: 0.2s;
-    transition-delay: 0.2s;
-  }
+
   &:hover {
     @include btnRoundHover($paddingSide, $height);
   }
 }
 
 @mixin btnRoundHover($paddingSide, $height) {
-  padding: 0 calc(#{$paddingSide} * 1.5) 0 0;
-  &::before {
-    width: calc(#{$height} * 0.7);
-    height: calc(#{$height} * 0.7);;
-    background-color: $color000;
+  .btn-round__inner {
+    &::before {
+      width: calc(#{$height} * 0.7);
+      height: calc(#{$height} * 0.7);;
+      background-color: $color000;
+    }
+    &::after {
+      transform: translate3d(0, -50%, 0) rotate(45deg);
+      opacity: 1;
+    }
   }
-  &::after {
-    transform: translate3d(0, -50%, 0) rotate(45deg);
-    opacity: 1;
+
+  .btn-round__txt {
+    transform: translate3d(calc($height * -0.3), 0, 0);
   }
 }
 
