@@ -41,6 +41,7 @@ export default defineConfig(() => {
     preview: {
       host: true,
     },
+    assetsInclude: ['**/*.pdf'],
     plugins: [
       viteImagemin({
         cache: true, // 캐시를 활성화하여 빌드 시간을 줄입니다.
