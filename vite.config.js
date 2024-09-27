@@ -11,7 +11,7 @@ export default defineConfig(() => {
     root: path.resolve(__dirname, 'src'),
     base: baseRoot,
     build: {
-      outDir: '../dist',
+      outDir: '../public',
       emptyOutDir: true,
       rollupOptions: {
         input: {
