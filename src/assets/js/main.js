@@ -9,6 +9,8 @@ import { mouseHoverHandler } from './module/MouseCursor';
 import { gsapScrollHandler } from './module/gsapAnimation';
 import { mainVisualHandler } from './module/gsapAnimation';
 import stackItems from './data/stackData';
+import StackList from './module/stackList';
+
 
 setupCopyText();
 refresh();
@@ -20,7 +22,7 @@ mouseHoverHandler();
 
 projectsHandler();
 detectDeviceType();
-stackDataPush();
+// stackDataPush();
 
 function projectsHandler() {
   const projectsWrap = document.querySelector('.projects');
@@ -64,23 +66,31 @@ function detectDeviceType() {
 
 // const mouse = new Mouse();
 
-function insertStackItems(arr, ele) {
-  const itemsHTML = arr.map(item => 
-    `
-    <li class="stack__item">
-      <img class="stack__item-logo" src="${item.logo}" alt="${item.alt}">
-      <span class="stack__item-flag">${item.flag}</span>
-    </li>
-    `
-  ).join('');
+// function insertStackItems(arr, ele) {
+//   const itemsHTML = arr.map(item => 
+//     `
+//     <li class="stack__item">
+//       <img class="stack__item-logo" src="${item.logo}" alt="${item.alt}">
+//       <span class="stack__item-flag">${item.flag}</span>
+//     </li>
+//     `
+//   ).join('');
 
-  ele.insertAdjacentHTML('beforeend', itemsHTML);
-}
+//   ele.insertAdjacentHTML('beforeend', itemsHTML);
+// }
 
-function stackDataPush() {
-  const stackForward = document.querySelector('.stack__list--forward');
-  const stackReverse = document.querySelector('.stack__list--reverse');
+// function stackDataPush() {
+//   const stackForward = document.querySelector('.stack__list--forward');
+//   const stackReverse = document.querySelector('.stack__list--reverse');
 
-  insertStackItems(stackItems.forward, stackForward);
-  insertStackItems(stackItems.reverse, stackReverse);
-}
+//   insertStackItems(stackItems.forward, stackForward);
+//   insertStackItems(stackItems.reverse, stackReverse);
+// }
+
+
+
+const stackListForward = new StackList(stackItems.forward, '.stack__list--forward');
+stackListForward.render();
+
+const stackListReverse = new StackList(stackItems.forward, '.stack__list--reverse');
+stackListReverse.render();
