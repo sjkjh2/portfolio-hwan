@@ -5,7 +5,7 @@ import path from 'node:path';
 
 export default defineConfig(() => {
   const isTest = false;
-  const baseRoot = isTest ? '/hwan/' : '/';
+  const baseRoot = '/';
 
   return {
     root: path.resolve(__dirname, 'src'),
