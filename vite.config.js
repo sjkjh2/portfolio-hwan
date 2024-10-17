@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
+import path from 'node:path';
 import viteImagemin from 'vite-plugin-imagemin';
 import handlebars from 'vite-plugin-handlebars';
-import path from 'node:path';
 
 export default defineConfig(() => {
   const isTest = false;
@@ -27,24 +27,23 @@ export default defineConfig(() => {
         },
         output: {
           assetFileNames: (assetInfo) => {
-            let result = 'assets/images/[name][extname]';
-            if (assetInfo.name.split('.')[1] === 'css') {
-              result = 'assets/styles/[name][extname]';
-            }
-            return result;
+            return assetInfo.name.endsWith('.css')
+              ? 'assets/styles/[name][extname]'
+              : 'assets/images/[name][extname]';
           },
           chunkFileNames: 'assets/js/[name].js',
           entryFileNames: 'assets/js/[name].js',
         },
       },
       assetsInclude: ['**/*.pdf'],
+      assetsInlineLimit: 1024,
     },
     preview: {
       host: true,
     },
     plugins: [
       viteImagemin({
-        cache: true, // 캐시를 활성화하여 빌드 시간을 줄입니다.
+        cache: true,
         gifsicle: {
           optimizationLevel: 7,
           interlaced: false,
@@ -63,11 +62,11 @@ export default defineConfig(() => {
           plugins: [
             {
               name: 'removeViewBox',
-              active: false, // viewBox 속성을 제거하지 않음
+              active: false,
             },
             {
               name: 'removeEmptyAttrs',
-              active: false, // 빈 속성을 제거하지 않음
+              active: false,
             },
           ],
         },
@@ -75,9 +74,9 @@ export default defineConfig(() => {
       handlebars({
         partialDirectory: path.resolve(__dirname, './src/partials'),
         helpers: {
-          rootSrc: baseRoot
-        }
+          rootSrc: baseRoot,
+        },
       }),
     ],
-  }
+  };
 });
