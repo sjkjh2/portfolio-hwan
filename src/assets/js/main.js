@@ -10,6 +10,8 @@ import { gsapScrollHandler } from './module/gsapAnimation';
 import { mainVisualHandler } from './module/gsapAnimation';
 import stackItems from './data/stackData';
 import StackList from './module/stackList';
+import projectItems from './data/projectData';
+import projectList from './module/projectList';
 
 
 setupCopyText();
@@ -92,5 +94,8 @@ function detectDeviceType() {
 const stackListForward = new StackList(stackItems.forward, '.stack__list--forward');
 stackListForward.render();
 
-const stackListReverse = new StackList(stackItems.forward, '.stack__list--reverse');
+const stackListReverse = new StackList(stackItems.reverse, '.stack__list--reverse');
 stackListReverse.render();
+
+const projectListRender = new projectList(projectItems, '.projects__list');
+projectListRender.render();
