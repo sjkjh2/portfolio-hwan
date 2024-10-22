@@ -9,7 +9,7 @@ export default class StackList {
       this.container.insertAdjacentHTML('beforeend', 
         `
           <li class="stack__item">
-            <img class="stack__item-logo" src="${item.logo}" alt="${item.alt}">
+            <img class="stack__item-logo" src="${item.logo}" alt="">
             <span class="stack__item-flag">${item.flag}</span>
           </li>
         `
