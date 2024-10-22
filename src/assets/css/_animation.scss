@@ -99,3 +99,18 @@
     transform: translate3d(0, 100%, 0);
   }
 }
+
+// @keyframes projectCoverleftTop {
+//   0% {
+//     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+//   }
+//   50% {
+//     clip-path: polygon(0 50%, 100% 30%, 100% 100%, 0 100%);
+//   }
+//   90% {
+//     clip-path: polygon(0 100%, 100% 90%, 100% 100%, 0 100%);
+//   }
+//   100% {
+//     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+//   }
+// }

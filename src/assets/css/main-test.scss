@@ -196,7 +196,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    
     &:hover .projects__link__bg {
       transform: scale(1.2);
       filter: brightness(0.4) blur(0.5rem);
@@ -246,23 +245,31 @@
         right: 0;
       }
       &.-top-left:hover ~ .projects__link__mask {
-        transform-origin: 100% 0%; 
-        transform: perspective(500px) translate3d(0, 100%, 0) rotateZ(-8deg) scale(1.1);
+        animation: projectCoverleftTop 0.4s forwards ease;
+        // animation-name: more;
+        // animation-duration: 1.5s;
+        // animation-iteration-count: infinite;
+        // animation-timing-function: $transEaseInOut;
+        // transform-origin: right top; 
+        transform: perspective(10rem);
       }
       &.-top-right:hover ~ .projects__link__mask {
-        transform-origin: 0% 0%; 
-        transform: perspective(500px) translate3d(0, 100%, 0) rotateZ(8deg) scale(1.1);
+        // transform-origin: left top; 
+        // transform: perspective(10rem) translate3d(0, 100%, 0) rotate(10deg) scale(1.2);
       }
       &.-btm-left:hover ~ .projects__link__mask {
-        transform-origin: 100% 100%; 
-        transform: perspective(500px) translate3d(0, -100%, 0) rotateZ(8deg) scale(1.1);
+        // transform-origin: right bottom; 
+        // transform: perspective(10rem) translate3d(0, -100%, 0) rotate(10deg) scale(1.2);
       }
       &.-btm-right:hover ~ .projects__link__mask {
-        transform-origin: 0 100%; 
-        transform: perspective(500px) translate3d(0, -100%, 0) rotateZ(-8deg) scale(1.1);
+        // transform-origin: left bottom; 
+        // transform: perspective(10rem) translate3d(0, -100%, 0) rotate(-10deg) scale(1.2);
       }
     }
     &__mask {
+      // clip-path: polygon(0 50%, 50% 25%, 100% 10%, 100% 100%, 0 100%);
+      // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      // clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
       position: absolute;
       z-index: 1;
       left: 0;
@@ -270,7 +277,7 @@
       width: 100%;
       height: 100%;
       background: $colorfff;
-      transition: transform 0.28s ease-in-out;
+      // transition: transform 0.3s ease-in-out;
     }
     &__bg {
       position: absolute;
@@ -280,8 +287,8 @@
       height: 100%;
       @include background($size: cover, $position: center);
       transform: scale(1.5);
-      transition-property: transform, filter;
-      transition-duration: 1s, 2s;
+      transition-property: transform, filter, clip-path;
+      transition-duration: 1s, 2s, 0.3s;
       &--bespoke {
         background-image: url("../images/bg_projects_bespoke.jpg");
       }
@@ -293,6 +300,14 @@
         background-position: top -5rem center;
         background-image: url("../images/bg_projects_adstorm.jpg");
       }
+      // &--ailife {
+      //   // background-position: top center;
+      //   background-image: url("../images/bg_projects_ailife.jpg");
+      // }
+      // &--bao {
+      //   // background-position: top center;
+      //   background-image: url("../images/bg_projects_bao.jpg");
+      // }
       &--cpg {
         background-position: top center;
         background-image: url("../images/bg_projects_cpg.jpg");
@@ -300,6 +315,15 @@
       &--dacor {
         background-image: url("../images/bg_projects_dacor.jpg");
       }
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   left: 0;
+      //   top: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: rgba(0, 0, 0, 0.3);
+      // }
     }
     &-txt {
       display: flex;
@@ -665,6 +689,16 @@
         &--adstorm {
           background-position: left top;
         }
+        // &--ailife {
+        //   background-position: right -85rem top;
+        //   background-size: 580% auto;
+        //   filter: brightness(0.5) !important;
+        // }
+        // &--bao {
+        //   background-position: top -8rem center;
+        //   background-size: 600% auto;
+        //   filter: brightness(0.5) !important;
+        // }
       }
       &-txt {
         display: flex;
